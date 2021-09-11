@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../2.css/style.css">
+    <script src="../3.js/script.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+    <title>Calculadora</title>
+</head>
+<body>
+    <!--Título-->
+        <h1>Calculadora</h1>
+
+    <!--Formulário-->
+        <form id="calc">
+            <section></section>
+            <section>
+                <fieldset>
+                <!--Campos de Números-->
+                    <p>
+                        <p>
+                            <label for="x">Número 1:</label>
+                        </p>
+                        <input type="number" id="x">
+                        <p>
+                            <label for="y">Número 2:</label>
+                        </p>
+                        <input type="number" id="y">
+                    </p>
+
+                <!--Campo de Resultado-->
+                    <p>
+                        <p>
+                            <label for="result">Resultado:</label>
+                        </p>
+                        <input type="text" id="result">
+                    </p>
+
+                <!--Botão de Apagar-->
+                    <input type="button" value="Apagar" onclick="Apagar();">
+
+                <!-- Botões de Operações -->
+                    <p>
+                        <input type="button" value="+" onclick="imprime(x.value, y.value, 1);">
+                        <input type="button" value="-" onclick="imprime(x.value, y.value, 2);">
+                        <input type="button" value="*" onclick="imprime(x.value, y.value, 3);">
+                        <input type="button" value="/" onclick="imprime(x.value, y.value, 4);">
+                        <input type="button" value="xʸ" onclick="imprime(x.value, y.value, 5);">
+                        <input type="button" value="√x" onclick="imprime(x.value, y.value, 6);">
+                        <input type="button" value="!" onclick="imprime(x.value, y.value, 7);">
+                        <input type="button" value="log" onclick="imprime(x.value, y.value, 8);">
+                        <input type="button" value="e" onclick="imprime(x.value, y.value, 9);">
+                        <input type="button" value="sen" onclick="imprime(x.value, y.value, 10);">
+                        <input type="button" value="cos" onclick="imprime(x.value, y.value, 11);">
+                        <input type="button" value="tg" onclick="imprime(x.value, y.value, 12);">
+                        <input type="button" value="φ" onclick="imprime(x.value, y.value, 13);">
+                        <input type="button" value="Binário" onclick="imprime(x.value, y.value, 14);">
+                        <input type="button" value="Octal" onclick="imprime(x.value, y.value, 15);">
+                    </p>
+                </fieldset>
+            </section>
+            <section></section>
+        </form>
+</body>
+</html>

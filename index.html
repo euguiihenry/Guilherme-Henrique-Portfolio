@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="./assets/js/script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./assets/img/logo/ghLogo.png" type="image/x-icon">
+    
     <title>Guilherme Henrique</title>
 </head>
 
@@ -18,11 +20,12 @@
             <img class="logo" src="./assets/img/logo/guilhermeHenriqueLogo.png" alt="Guilherme Henrique - Logo">
         </div>
 
-        <div class="nav-buttons">
+        <div class="nav-buttons" id="navbarBtn">
             <button class="btn-choice" onclick="location.href='#resume'">Sobre Mim</button>
             <button class="btn-choice" onclick="location.href='#projects'">Projetos</button>
-            <button class="btn-choice" onclick="location.href='./assets/cv/cv.pdf'">Currículo</button>
+            <button class="btn-choice" onclick=" window.open('./assets/cv/cv.pdf')">Currículo</button>
         </div>
+        <button id="btnMobile">Menu</button>
     </nav>
 
     <section class="hero">
@@ -37,64 +40,85 @@
         <img class="avatar" src="./assets/img/avatar/guilhermeAvatar.jpg" alt="Guilherme Henrique - Imagem">
         <div class="resume-data">
             <h3>SOBRE MIM</h3>
-            <p class="resume-phrase">Desde o início da adolescência sou interessado na área da computação e estudos de línguas. Atualmente, sou graduando de Ciência da Computação da Universidade FUMEC, na qual ingressei em 2021. E estudo de maneira independente Espanhol, Francês e Inglês (possuo nível B2 em Inglês). Além disso, tenho interesse em diversas outras áreas de estudos, mas tenho foco majoritário naquelas mencionadas.</p>
+            <p class="resume-phrase">Desde o início da adolescência sou interessado na área da computação e estudos de línguas. Atualmente, tenho 19 anos e sou graduando de Ciência da Computação da Universidade FUMEC, na qual ingressei em 2021. E estudo de maneira independente Espanhol, Francês e Inglês (possuo nível B2 em Inglês). Além disso, tenho interesse em diversas outras áreas de estudos, mas tenho foco majoritário naquelas mencionadas.</p>
             <div class="social">
-            <button class="social-btn" onclick="location.href='https://github.com/euguiihenry'"><img width="25px" src="./assets/img/icons/gitHubIcon.png"><br>GitHub</button>
-            <button class="social-btn" onclick="location.href='https://instagram.com/euguiihenry/'"><img width="25px" src="./assets/img/icons/instagramIcon.png"><br>Instagram</button>
-            <button class="social-btn" onclick="location.href='https://www.linkedin.com/in/guilherme-henrique-l/'"><img width="25px" src="./assets/img/icons/linkedInIcon.png"><br>LinkedIn</button>
+                <button class="social-btn" onclick=" window.open('https://github.com/euguiihenry')"><img width="25px" src="./assets/img/icons/gitHubIcon.png"><br>GitHub</button>
+                <button class="social-btn" onclick=" window.open('https://instagram.com/euguiihenry/')"><img width="25px" src="./assets/img/icons/instagramIcon.png"><br>Instagram</button>
+                <button class="social-btn" onclick=" window.open('https://www.linkedin.com/in/guilherme-henrique-l/')"><img width="25px" src="./assets/img/icons/linkedInIcon.png"><br>LinkedIn</button>
             </div>
         </div>
     </section>
 
     <br>
 
-    <h3>PROJETOS</h3> 
-
-    <br>
-
     <section id="projects">
-        <div class="card">
-            <div class="topPart">
-                <h4 class="cardTitle">Olimpo Aulas</h4>
-                <p class="cardSubtitle">Projeto em desenvolvimento, com uma amiga, de uma plataforma de estudos com foco em democratizar o acesso ao ensino superior na Grande BH.</p>
+        <h3>PROJETOS</h3> 
+
+        <br>
+            
+        <div class="projects-data">
+            <div class="card">
+                <div class="topPart">
+                    <h4 class="cardTitle">Olimpo Aulas</h4>
+                    <p class="cardSubtitle">Projeto em desenvolvimento (com uma amiga) de uma plataforma de estudos com foco em democratizar o acesso ao ensino superior na Grande BH.</p>
+                </div>
+                <br>
+                <div class="cardPic"></div>
+                <br>
+                <span><strong>Mais informações em breve!</strong></span>
             </div>
+
             <br>
-            <div class="cardPic"></div>
-            <br>
-            <span><strong>Mais informações em breve!</strong></span>
-        </div>
-        <br>
-        <div class="card">
-            <div class="topPart">
-                <h4 class="cardTitle">Calculadora</h4>
-                <p class="cardSubtitle">Calculado desenvolvida utilizando HTML, CSS e JS, atividade realizada para a disciplina de Introdução à Programação Web.</p>
-            </div> 
-            <br>
-            <div class="cardPic"></div>
-            <br>
-            <span><a href="">Acesse aqui</a></span>
-        </div>
-        <br>
-        <div class="card">
-            <div class="topPart">
-                <h4 class="cardTitle">Formulário Simples</h4>
-                <p class="cardSubtitle">Formulário desenvolvido utilizando HTML e CSS, atividade realizada para a disciplina de Introdução à Programação Web.</p>
-            </div> 
-            <br>
-            <div class="cardPic"></div>
-            <br>
-            <span><a href="">Acesse aqui</a></span>
-        </div>
-        <br>
-        <div class="card">
-            <div class="topPart">
-                <h4 class="cardTitle">Cafeteria - Listagem</h4>
-                <p class="cardSubtitle">Código desenvolvido com intuito de aprender sobre as estruturas de listagem, também desenvolvido para disciplina de Introdução à Programação Web.</p>
+
+            <div class="card">
+                <div class="topPart">
+                    <h4 class="cardTitle">Calculadora</h4>
+                    <p class="cardSubtitle">Calculado desenvolvida utilizando HTML, CSS e JS (pouca responsividade), atividade realizada para a disciplina de Introdução à Programação Web.</p>
+                </div> 
+                <br>
+                <div class="cardPic"></div>
+                <br>
+                <span><a href="./assets/cardItems/pages/calculadora/1.html/index.html" target="_blank">Acesse aqui</a></span>
             </div>
-            <br> 
-            <div class="cardPic"></div>
+
             <br>
-            <span><a href="">Acesse aqui</a></span>
+
+            <div class="card">
+                <div class="topPart">
+                    <h4 class="cardTitle">Formulário Simples</h4>
+                    <p class="cardSubtitle">Formulário desenvolvido utilizando HTML e CSS (ainda sem responsividade), atividade realizada para a disciplina de Introdução à Programação Web.</p>
+                </div> 
+                <br>
+                <div class="cardPic"></div>
+                <br>
+                <span><a href="./assets/cardItems/pages/cafeteriaListagem/2021.04.06 - Aula 10 - Formulário.html" target="_blank">Acesse aqui</a></span>
+            </div>
+
+            <br>
+
+            <div class="card">
+                <div class="topPart">
+                    <h4 class="cardTitle">Cafeteria - Listagem</h4>
+                    <p class="cardSubtitle">Código para aprendizagem de estruturas de listagem (ainda sem responsividade). Desenvolvido para disciplina de Introdução à Programação Web.</p>
+                </div>
+                <br> 
+                <div class="cardPic"></div>
+                <br>
+                <span><a href="./assets/cardItems/pages/formulárioSimples/1. Listagem Desordenada & Ordenada.html" target="_blank">Acesse aqui</a></span>
+            </div>
+
+            <br>
+
+            <div class="card">
+                <div class="topPart">
+                    <h4 class="cardTitle">Guilherme's Classes</h4>
+                    <p class="cardSubtitle">Projeto voluntário no qual ministrei algumas aulas de inglês para alguns amigos durante o ano de 2020, este ocorreu de de Junho a Outubro. </p>
+                </div>
+                <br> 
+                <div class="cardPicD"></div>
+                <br>
+                <span><a href="https://sites.google.com/view/guilhermeclasses" target="_blank">Acesse aqui</a></span>
+            </div>
         </div>
     </section>
 
