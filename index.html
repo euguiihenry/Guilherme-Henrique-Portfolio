@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <script src="./assets/js/script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./assets/img/logo/ghLogo.png" type="image/x-icon">
-    
+    <script src="https://kit.fontawesome.com/d29edc56b8.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/scripts.js"></script>
     <title>Guilherme Henrique</title>
 </head>
 
@@ -20,18 +20,23 @@
             <img class="logo" src="./assets/img/logo/guilhermeHenriqueLogo.png" alt="Guilherme Henrique - Logo">
         </div>
 
-        <div class="nav-buttons" id="navbarBtn">
+        <div class="nav-buttons">
             <button class="btn-choice" onclick="location.href='#resume'">Sobre Mim</button>
             <button class="btn-choice" onclick="location.href='#projects'">Projetos</button>
             <button class="btn-choice" onclick=" window.open('./assets/cv/cv.pdf')">Currículo</button>
         </div>
-        <button id="btnMobile">Menu</button>
+
+        <ul id="navList">
+            <li><a href="#resume">Sobre Mim</a></li>
+            <li><a href="#projects">Projetos</a></li>
+            <li><a href="./assets/cv/cv.pdf" target="_blank" rel="noopener noreferrer">Currículo</a></li>
+        </ul>
     </nav>
 
     <section class="hero">
         <div class="hero-div">
             <p class="hero-phrase">Hey! Meu nome é <strong>Guilherme Henrique</strong> e seja bem-vindo(a/e) ao meu portfólio <i>(p.s. Ainda estamos em construção, rsrs)</i></p>
-            <button class="hero-btn" onclick="location.href='#contact-form'">Contate-me</button>
+            <button class="hero-btn" onclick="location.href='#contact-mail'">Contate-me</button>
         </div>
         <img class="hero-sticker" src="https://blush.design/api/download?shareUri=MRA76UhPU2SkAxCw&c=Hair_0%7E6b432a_Skin_0%7Effbe95&w=800&h=800&fm=png" alt="Sticker">
     </section>
@@ -122,55 +127,25 @@
         </div>
     </section>
 
-    <section id="contact-form">
-        <form>
-            
-        </form>
-    </section>
+    <br>
+    
+    <h3>Contate-me</h3>
+    <br>
+    <p id="contact-mail">Me mande um e-mail: gui2012451@gmail.com</p>
+
+    <br>
+
+    <!-- <section id="contact-form">
+        <form action="https://formsubmit.co/gui2012451@gmail.com" method="POST">
+            <input type="text" name="name" required placeholder="Nome">
+            <input type="email" name="email" required placeholder="E-mail">
+            <button type="submit" id="submitButton">Send</button>
+       </form>
+    </section> -->
 
     <footer>
         <p class="footer-phrases">Made by Guilherme Henrique</p>
         <p class="footer-phrases">© Copyright 2021 GH</p>
     </footer>
 </body>
-
-
-<!-- <body>
-    <nav>
-        <div>
-            <img id="logo"  src="./assets/img/logo/GH - complexLogo.png" alt="Guilherme Henrique - Logo">
-        </div>
-        <div id="nav-bnt">
-            <button id="btn-choice" onclick="location.href='#projetos'">Projetos</button>
-            <button id="btn-choice" onclick="location.href='#curriculo'">Currículo</button>
-        </div>
-    </nav>
-
-    <section id="start-info">
-        <div class="resume">
-            <h1 id="resume-title" style="text-align: center;">Guilherme Henrique</h1>
-            <p id="resume-phrase" style="text-align: center;">Graduando de ciência da computação em início de carreira, entusiasta de línguas, mineiro, 19 anos.</p>
-            <button id ="contact-lbnt" onclick="location.href='#contact">Contate-me</button>
-            <br>
-            <section style="align-self: center;">
-                <button class="socialbtn" onclick="location.href='https://www.linkedin.com/in/guilherme-henrique-l/'"><img width="25px" src="./assets/img/icons/LinkedIn Icon.png"><br>LinkedIn</button>
-                <button class="socialbtn" onclick="location.href='https://github.com/euguiihenry'"><img width="25px" src="./assets/img/icons/GitHub Icon.png"><br>GitHub</button>
-                <button class="socialbtn" onclick="location.href='https://instagram.com/euguiihenry/'"><img width="25px" src="./assets/img/icons/Instragram Icon.png"><br>Instagram</button>
-            </section>
-        
-        </div>
-
-        <img id="avatar" width="350px" src="./assets/img/avatar/Guilherme Avatar.jpg" alt="Guilherme Photo">
-    </section>
-
-    <hr>
-    <section id="contact">
-        <form>
-
-        </form>
-    </section>
-    <footer>
-        <p id="end-phrase">Made with ❤ by Guilherme Henrique</p>
-    </footer>
-</body> -->
 </html>
