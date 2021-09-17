@@ -208,6 +208,32 @@
         align-self: center;
     }
 
+/* Thank You Page - Desktop:*/
+    .navThanks{
+        display: flex;
+        justify-content: center;
+    }
+
+    .logoThanks{
+        width: 100px;
+    }
+
+    .thanksDivList{
+        display: flex;
+        justify-content: center;
+    }
+
+    .thanksList{
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .homePageLink{
+        display: flex;
+        justify-content: center;
+    }
+
 /* Media Queries */
     @media only screen and (max-width: 700px){
         *{
@@ -274,5 +300,9 @@
             align-self: center;
             align-items: center;
             align-content: center;
+        }
+
+        .thanksDivList{
+            padding: 5%;
         }
     }
