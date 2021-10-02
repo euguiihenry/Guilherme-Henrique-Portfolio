@@ -19,21 +19,16 @@
 
 <body>
     <nav>
-        <div>
+        <div class=logoclass>
             <img class="logo" src="./assets/img/logo/guilhermeHenriqueLogo.png" alt="Guilherme Henrique - Logo">
         </div>
 
         <div class="nav-buttons">
-            <button class="btn-choice" onclick="location.href='#resume'">Sobre Mim</button>
-            <button class="btn-choice" onclick="location.href='#projects'">Projetos</button>
-            <button class="btn-choice" onclick=" window.open('./assets/cv/cv.pdf')">Currículo</button>
+            <ul id="navList">
+                <li class="navChoice"><a href="#resume">Sobre Mim</a></li>
+                <li class="navChoice"><a href="#projects">Projetos</a></li>
+            </ul>
         </div>
-
-        <ul id="navList">
-            <li><a href="#resume">Sobre Mim</a></li>
-            <li><a href="#projects">Projetos</a></li>
-            <li><a href="./assets/cv/cv.pdf" target="_blank" rel="noopener noreferrer">Currículo</a></li>
-        </ul>
     </nav>
 
     <section class="hero">
@@ -140,7 +135,7 @@
     <footer>
         <p class="footer-phrases">Made by Guilherme Henrique</p>
         <p class="footer-phrases">© Copyright 2021 GH</p>
-        <a href="./assets/thankYouPage/thankyou.html">Thank You Page</a>
+        <a class="thankyou-link" href="./assets/thankYouPage/thankyou.html">Thank You Page</a>
     </footer>
 </body>
 </html>

@@ -40,10 +40,20 @@
     .nav-buttons{
         align-self: center;
         margin-right: 15px;
+        justify-content: space-around;
     }
 
     ul{
-        display: none;
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+    }
+
+    .navChoice{
+        display: flex;
+        flex-direction: row;
+        padding: 2vh;
+        text-align: center;
     }
 
     .btn-choice{
@@ -196,16 +206,16 @@
         text-decoration: none;
     }
 
-    ul{
-        list-style-type: none;
-    }
-
     /* .contact-form{
 
     } */
 
     #contact-mail{
         align-self: center;
+    }
+
+    .thankyou-link{
+        text-decoration: underline;
     }
 
 /* Thank You Page - Desktop:*/
@@ -232,6 +242,7 @@
     .homePageLink{
         display: flex;
         justify-content: center;
+        text-decoration: underline;
     }
 
 /* Media Queries */
@@ -243,23 +254,28 @@
         }
 
         nav{
-            margin: 15px;
+            margin: 10px;
         }
 
         .logo{
-            margin-top: 10px;
+            margin-top: 5px;
         }
 
         .nav-buttons{
-            display: none;
+            display: flex;
         }
 
         #navList{
             display: flex;
             flex-direction: column;
             justify-content: center;
-            margin: 3% 5%;
-            gap: 10px;
+            text-align: center;
+            /* padding: 2%; */
+            /* gap: 10px; */
+        }
+
+        .navChoice{
+            text-align: center;
         }
 
         .hero{
