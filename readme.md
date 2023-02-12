@@ -1,5 +1,7 @@
-<p>Projeto do meu portfólio, feito com base (em parte) na revisão realizada no Bootcamp da Ania.</p>
+# HenryPortfolio
 
-<p>Criação: June 5th, 2021.</p>
+This is the project made to generate my portfolio, it is build using Angular version 15.0.1, Vercel, TailwindCSS.
 
-<p>Última atualização: September 17th, 2021. (Not complete, yet!)</p>
+## Design Part:
+
+The design project can be checked out at <a href="https://google.com">https://google.com</a>
