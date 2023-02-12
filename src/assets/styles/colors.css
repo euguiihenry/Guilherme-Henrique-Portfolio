@@ -1,0 +1,15 @@
+:root{
+    /* Light Theme */    
+    --old-lace-base-color-light-theme: #FAF5E4;
+    --black-olive-secondary-light-theme: #3B3935;
+    --black-shadows-secondary-light-theme: #BAB6A9;
+    --bone-secondary-light-theme: #E0DCCC;
+    --grullo-primary-light-theme: #ADA68C;
+    --lavender-web-primary-light-theme: #E3E6FA;
+    --shadow-blue-primary-light-theme: #7B82AD;
+    --sonic-silver-secondary-light-theme: #7A786F;
+    --white-primary-light-theme: #FFFFFF;
+
+    /* Text */
+    --dark-text: #1f242a;
+}

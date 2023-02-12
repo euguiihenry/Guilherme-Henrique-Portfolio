@@ -1,0 +1,38 @@
+.current::after {
+    content: "";
+    display: block;
+    width: 1em;
+    height: 0.29em;
+    background-color: var(--dark-text);
+    border-radius: 3em;
+    margin: 0.19em auto;
+    color: var(--dark-text);
+}
+
+.current {
+    font-weight: 600;
+    color: var(--dark-text);
+}
+
+.link-margin{
+    margin-top: -0.625em;
+}
+
+.color{
+    background-color: aquamarine;
+}
+
+.nav-buttons{
+    background-color: var(--bone-secondary-light-theme);
+    border-radius: 1.1em;
+}
+
+.img-bt{
+    width: 25px;
+    height: 25px;
+}
+
+.contact-button{
+    background-color: var(--shadow-blue-primary-light-theme);
+    border-radius: 1.25em;
+}
