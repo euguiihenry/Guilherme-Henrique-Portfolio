@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CommonModule } from './common/common.module';
+import { RecurrentModule } from './common/recurrent.module';
 import { PagesModule } from './pages/pages.module';
 
 @NgModule({
@@ -13,7 +13,7 @@ import { PagesModule } from './pages/pages.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CommonModule,
+    RecurrentModule,
     PagesModule
   ],
   providers: [],

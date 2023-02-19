@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { GetCurrentRouteService } from '../services/get-current-route.service';
+import { Component, OnInit, ChangeDetectorRef, EventEmitter } from '@angular/core';
+import { GetCurrentRouteService } from '../services/current-route/get-current-route.service';
+import { Router } from '@angular/router';
+import { RouterService } from '../services/router-check/router.service';
 
 @Component({
   selector: 'app-header',
@@ -7,21 +9,18 @@ import { GetCurrentRouteService } from '../services/get-current-route.service';
   styleUrls: ['./header.component.css']
 })
 
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   currentURL: string;
+  className: string
+  //public status: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor(private currentRouteService: GetCurrentRouteService) {
+  constructor(private currentRouteService: GetCurrentRouteService, private changeDetectorRef: ChangeDetectorRef, readonly routerService: RouterService) {
     this.currentURL = '';
-    this.currentRouteService.getCurrentRoute();
-    //console.log(this.currentURL);
+    this.className = '';
   }
-
-  // Navbar links to show active page changing color and inserting dots:
-    
-
-  // Change language:
-
-  // Change theme color:
-
-  // 
+  ngOnInit(): void {
+    this.currentRouteService.getCurrentRoute().subscribe(route => {
+      this.currentURL = route;
+    })
+  }
 }

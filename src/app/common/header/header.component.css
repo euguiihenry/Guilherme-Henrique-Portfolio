@@ -14,12 +14,24 @@
     color: var(--dark-text);
 }
 
+.hide{
+    display: none;
+    width: 0;
+    height: 0;
+    visibility: 0;
+
+}
+
 .link-margin{
-    margin-top: -0.625em;
+    margin-top: 0.7em;
 }
 
 .color{
     background-color: aquamarine;
+}
+
+.nav-link{
+    font-weight: 600;
 }
 
 .nav-buttons{
@@ -32,7 +44,9 @@
     height: 25px;
 }
 
-.contact-button{
+.action-button{
     background-color: var(--shadow-blue-primary-light-theme);
     border-radius: 1.25em;
+    width: 8em;
+    height: 3em;
 }
