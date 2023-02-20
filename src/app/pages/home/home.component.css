@@ -1,0 +1,16 @@
+.habilities{
+    width: 5em;
+    height: 5em
+}
+
+img{
+    border-radius: 1.2em;
+}
+
+button{
+    border-radius: 1.2em;
+}
+
+html{
+    flex-grow: 1;
+}

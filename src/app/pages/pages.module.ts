@@ -5,6 +5,7 @@ import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { AcademicComponent } from './academic/academic.component';
 import { ContactComponent } from './contact/contact.component';
+import { RouterModule, Router } from '@angular/router';
 
 
 
@@ -17,6 +18,7 @@ import { ContactComponent } from './contact/contact.component';
     ContactComponent
   ],
   imports: [
+    RouterModule
   ]
 })
 export class PagesModule { }
