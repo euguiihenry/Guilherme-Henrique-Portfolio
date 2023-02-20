@@ -1,0 +1,17 @@
+.nav-buttons{
+    background-color: var(--bone-secondary-light-theme);
+    border-radius: 1.1em;
+}
+
+.img-bt{
+    width: 25px;
+    height: 25px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }

@@ -1,4 +1,4 @@
-<nav class="flex items-center justify-between flex-wrap p-7">
+<nav class="flex items-center justify-around flex-wrap p-7">
     <div class="flex items-center flex-shrink-0 text-white">
         <img src="../../../assets/img/mainLogo.svg" class="w-24">
     </div>
@@ -12,54 +12,62 @@
         </button>
     </div>
     
-    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto ml-5">
-        <div class="text-sm lg:flex-grow nav-link flex justify-center items-center">
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto justify-items-center place-content-center">
+        <div class="text-sm lg:flex-grow nav-link flex justify-center items-center gap-5">
             <a routerLink="/home" routerLinkActive="current" 
-            [ngClass]="{ 'current link-margin ': routerService.isActive('home') }" 
-            class="block mt-4 lg:inline-block lg:mt-0 text-gray-400 hover:opacity-60 mr-5 uppercase nav-link">
+            [ngClass]="{ 'current link-margin ': routerService.isActive('home'), 'hide': routerService.isActive('contact') }" 
+            class="block mt-4 lg:inline-block lg:mt-0 text-gray-400 hover:opacity-60 uppercase nav-link">
                 Início
             </a>
 
             <a routerLink="/about" routerLinkActive="current" 
-            [ngClass]="{ 'current link-margin': routerService.isActive('about') }"
-            class="block mt-4 lg:inline-block lg:mt-0 text-gray-400 hover:opacity-60 mr-5 uppercase nav-link">
-                Sobre Mim
+            [ngClass]="{ 'current link-margin': routerService.isActive('about'), 'hide': routerService.isActive('contact') }"
+            class="block mt-4 lg:inline-block lg:mt-0 text-gray-400 hover:opacity-60 uppercase nav-link">
+                Sobre
             </a>
 
             <a routerLink="/projects" routerLinkActive="current" 
-            [ngClass]="{ 'current link-margin': routerService.isActive('projects'), 'hide': routerService.isActive('home')  }" 
-            class="block mt-4 lg:inline-block lg:mt-0 text-gray-400 hover:opacity-60 mr-5 uppercase nav-link">
+            [ngClass]="{ 'current link-margin': routerService.isActive('projects'), 'hide': routerService.isActive('home') || routerService.isActive('contact') }" 
+            class="block mt-4 lg:inline-block lg:mt-0 text-gray-400 hover:opacity-60 uppercase nav-link">
                 Projetos
             </a>
 
             <a routerLink="/academic" routerLinkActive="current"
-            [ngClass]="{ 'current link-margin': routerService.isActive('academic'), 'hide': routerService.isActive('home')  }" 
+            [ngClass]="{ 'current link-margin': routerService.isActive('academic'), 'hide': routerService.isActive('home') || routerService.isActive('contact') }" 
             class="block mt-4 lg:inline-block lg:mt-0 text-gray-400 hover:opacity-60 uppercase nav-link">
                 Acadêmico
             </a>
-        </div>
-        <div class="flex justify-center">
-            <button [ngClass]="{'hide': routerService.isActive('about') || routerService.isActive('projects') || routerService.isActive('academic')|| routerService.isActive('contact')}"
-            class="nav-buttons p-2">
-                <img class="img-bt" src="../../../assets/img/portugueseLanguage.png">
-            </button>
 
-            <button [ngClass]="{'hide': routerService.isActive('about') || routerService.isActive('projects') || routerService.isActive('academic') || routerService.isActive('contact')}" 
-            class="nav-buttons p-2 ml-2">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
-                </svg>
-            </button>
-
-            <button routerLink="/contact" [ngClass]="{ 'hide': routerService.isActive('contact') }"
-            class="action-button text-sm text-white p-2 px-3 ml-2 rounded-lg text-center font-semibold uppercase">
-                <p>Contate-me</p>
-            </button>
-            
-            <button routerLink="/home" [ngClass]="{'hide': routerService.isActive('about') || routerService.isActive('projects') || routerService.isActive('academic') || routerService.isActive('home')}"
-            class="action-button text-sm text-white p-2 px-3 ml-2 rounded-lg text-center font-semibold uppercase">
-                <p>Início</p>
-            </button>
+            <a routerLink="/contact" routerLinkActive="current"
+            [ngClass]="{ 'current link-margin': routerService.isActive('contact'), 'hide': routerService.isActive('home') || routerService.isActive('about') || routerService.isActive('projects') || routerService.isActive('academic') }" 
+            class="block mt-4 lg:inline-block lg:mt-0 text-gray-400 hover:opacity-60 uppercase nav-link justify-self-center">
+                Contato
+            </a>
         </div>
+        
+    </div>
+
+    <div class="flex justify-end">
+        <!-- <button [ngClass]="{'hide': routerService.isActive('about') || routerService.isActive('projects') || routerService.isActive('academic')|| routerService.isActive('contact')}"
+        class="nav-buttons p-2">
+            <img class="img-bt" src="../../../assets/img/portugueseLanguage.png">
+        </button>
+
+        <button [ngClass]="{'hide': routerService.isActive('about') || routerService.isActive('projects') || routerService.isActive('academic') || routerService.isActive('contact')}" 
+        class="nav-buttons p-2 ml-2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+            </svg>
+        </button> -->
+
+        <button routerLink="/contact" [ngClass]="{ 'hide': routerService.isActive('contact') }"
+        class="action-button text-sm text-white p-2 px-3 ml-2 rounded-lg text-center font-semibold uppercase">
+            <p>Contate-me</p>
+        </button>
+        
+        <button routerLink="/home" [ngClass]="{'hide': routerService.isActive('about') || routerService.isActive('projects') || routerService.isActive('academic') || routerService.isActive('home')}"
+        class="action-button text-sm text-white p-2 px-3 ml-2 rounded-lg text-center font-semibold uppercase">
+            <p>Início</p>
+        </button>
     </div>
 </nav>
