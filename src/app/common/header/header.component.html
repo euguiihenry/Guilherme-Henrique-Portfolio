@@ -38,9 +38,9 @@
                 Acadêmico
             </a>
 
-            <a routerLink="/contact" routerLinkActive="current"
+            <a routerLinkActive="current"
             [ngClass]="{ 'current link-margin': routerService.isActive('contact'), 'hide': routerService.isActive('home') || routerService.isActive('about') || routerService.isActive('projects') || routerService.isActive('academic') }" 
-            class="block mt-4 lg:inline-block lg:mt-0 text-gray-400 hover:opacity-60 uppercase nav-link justify-self-center">
+            class="block mt-4 lg:inline-block lg:mt-0 text-gray-400 uppercase nav-link justify-self-center">
                 Contato
             </a>
         </div>

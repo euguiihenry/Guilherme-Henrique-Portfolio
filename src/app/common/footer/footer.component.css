@@ -1,9 +1,9 @@
-.nav-buttons{
+.nav-buttons {
     background-color: var(--bone-secondary-light-theme);
     border-radius: 1.1em;
 }
 
-.img-bt{
+.img-bt {
     width: 25px;
     height: 25px;
 }
@@ -14,4 +14,17 @@ footer {
     left: 0;
     width: 100%;
     text-align: center;
-  }
+}
+
+.social-icons{
+
+}
+
+.social-icons-svg{
+    width: 2em;
+    height: 1.6em;
+}
+
+.color{
+    background-color: aquamarine;
+}

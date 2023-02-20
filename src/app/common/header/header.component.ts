@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef, EventEmitter } from '@angular/core';
-import { GetCurrentRouteService } from '../services/current-route/get-current-route.service';
+import { GetCurrentRouteService } from '../services/get-current-route/get-current-route.service';
 import { Router } from '@angular/router';
 import { RouterService } from '../services/router-check/router.service';
 

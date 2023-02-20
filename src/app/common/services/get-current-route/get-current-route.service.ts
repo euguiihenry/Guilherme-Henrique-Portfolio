@@ -14,23 +14,6 @@ export class GetCurrentRouteService {
       map(event => (event as NavigationEnd).url)
     );
   }
-
-  getOldRoute(){
-    let currentRoute = '';
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        currentRoute = event.url;
-      }
-    });
-  }
-
-  setRoute() {
-    let path;
-    this.getCurrentRoute().subscribe(route => {
-      path = route;
-      
-    });
-  }
 }
 
 
