@@ -11,6 +11,10 @@
 footer{
     padding-top: 3em;
     margin-top: auto;
+    height: 100%;
+    /* display: grid;
+    justify-content: space-around;
+    align-content: end; */
 }
 
 /* footer {

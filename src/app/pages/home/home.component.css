@@ -1,10 +1,12 @@
-.habilities{
-    width: 5em;
-    height: 5em
+.phrase{
+    width: 23rem;
+    padding-inline-end: 3.5em;
+    margin-top: 0.5em;
 }
 
-img{
-    border-radius: 1.2em;
+.habilities{
+    width: 2.5rem;
+    height: 2.5rem
 }
 
 button{
@@ -13,4 +15,8 @@ button{
 
 html{
     flex-grow: 1;
+}
+
+.color{
+    background-color: aquamarine;
 }
