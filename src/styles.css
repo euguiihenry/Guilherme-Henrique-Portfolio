@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 @import "./assets/styles/colors.css";
+@import "./assets/styles/typograph.css";
 
 body{
     background-color: var(--old-lace-base-color-light-theme);
+    color: var(--dark-text);
 }
 
