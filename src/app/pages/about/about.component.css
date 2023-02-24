@@ -1,6 +1,4 @@
-.img-sizing{
-    width: 25em;
-    max-width: 95%;
-    height: 25em;
-    margin-bottom: 0;
+img{
+    width: 30em;
+    height: auto;
 }

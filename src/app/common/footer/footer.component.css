@@ -12,28 +12,9 @@ footer{
     padding-top: 3em;
     margin-top: auto;
     height: 100%;
-    /* display: grid;
-    justify-content: space-around;
-    align-content: end; */
-}
-
-/* footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-} */
-
-.social-icons{
-
 }
 
 .social-icons-svg{
     width: 2em;
     height: 1.6em;
-}
-
-.color{
-    background-color: aquamarine;
 }
