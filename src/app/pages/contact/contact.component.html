@@ -2,7 +2,7 @@
     <h1 class="text-5xl font-bold mb-2">Contate-me</h1>
     <p class="mb-8 text-sm">Assim que possível retornarei seu e-mail :)</p>
 
-    <form class="flex flex-col w-80 form-contact">
+    <form class="flex flex-col w-80 lg:w-2/4 form-contact">
         <label class="mb-2 font-bold text-gray-600 ml-2 text-sm" for="name">Nome</label>
         <input
             class="mb-3 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -23,10 +23,11 @@
             class="mb-6 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none"
             id="message" placeholder="Sua mensagem aqui" required></textarea>
 
-        <button
-            class="bg-gray-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="submit">
-            Enviar
-        </button>
+        <div class="flex justify-center">
+            <button class="bg-gray-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-80" type="submit">
+                Enviar
+            </button>  
+        </div>
+        
     </form>
 </div>

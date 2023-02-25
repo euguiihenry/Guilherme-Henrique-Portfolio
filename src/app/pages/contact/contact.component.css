@@ -1,5 +1,9 @@
 input, button{
- border-radius: 0.5em;
+    border-radius: 0.5em;
+}
+
+input{
+    max-width: 100%;
 }
 
 .form-contact{
