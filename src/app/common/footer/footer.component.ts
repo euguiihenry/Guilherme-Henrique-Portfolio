@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterService } from '../services/router-check/router.service';
+import { RouterService } from '../../common/services/router-check/router.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +7,18 @@ import { RouterService } from '../services/router-check/router.service';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
+  public showInfo: boolean = true;
 
   constructor(readonly routerService: RouterService) {
 
+  }
+
+  openInfo() {
+    this.showInfo = false;
+  }
+
+  closeInfo() {
+    this.showInfo = true;
   }
 
 }

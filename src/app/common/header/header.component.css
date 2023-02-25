@@ -17,15 +17,10 @@
 .hide{
     display: none;
     visibility: hidden;
-
 }
 
 .link-margin{
     margin-top: 0.7em;
-}
-
-.color{
-    background-color: aquamarine;
 }
 
 .nav-link{
