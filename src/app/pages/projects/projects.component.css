@@ -1,6 +1,15 @@
-.img-sizing{
-    width: 25em;
-    max-width: 95%;
-    height: 25em;
-    margin-bottom: 0;
+@media (min-width: 640px) {
+    .w-one-half {
+        width: 50%;
+    }
+}
+
+@media (min-width: 768px) {
+    .w-one-quarter {
+        width: 25%;
+    }
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
 }

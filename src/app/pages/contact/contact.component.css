@@ -1,6 +1,7 @@
-.img-sizing{
-    width: 25em;
-    max-width: 95%;
-    height: 25em;
-    margin-bottom: 0;
+input, button{
+ border-radius: 0.5em;
+}
+
+.form-contact{
+    max-width: 100%;
 }

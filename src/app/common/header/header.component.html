@@ -62,12 +62,12 @@
 
         <button routerLink="/contact" [ngClass]="{ 'hide': routerService.isActive('contact') }"
         class="action-button text-sm text-white p-2 px-3 ml-2 rounded-lg text-center font-semibold uppercase">
-            <p>Contate-me</p>
+            <p class="font-bold">Contate-me</p>
         </button>
         
         <button routerLink="/home" [ngClass]="{'hide': routerService.isActive('about') || routerService.isActive('projects') || routerService.isActive('academic') || routerService.isActive('home')}"
         class="action-button text-sm text-white p-2 px-3 ml-2 rounded-lg text-center font-semibold uppercase">
-            <p>Início</p>
+            <p class="font-bold">Início</p>
         </button>
     </div>
 </nav>

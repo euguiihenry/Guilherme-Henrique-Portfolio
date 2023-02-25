@@ -1,5 +1,32 @@
-<div class="text-center py-20 flex flex-col justify-center content-center">
-    <h1 class="text-2xl font-bold mb-4">Página em Construção</h1>
-    <p class="text-gray-500">Ainda estamos trabalhando nessa página. Por favor, volte depois!</p>
-    <img src="../../../assets/img/sticker_under_construction_.svg" class="img-sizing self-center motion-safe:animate-pulse inset-0">
+<div class="flex flex-col items-center">
+    <h1 class="text-5xl font-bold mb-2">Contate-me</h1>
+    <p class="mb-8 text-sm">Assim que possível retornarei seu e-mail :)</p>
+
+    <form class="flex flex-col w-80 form-contact">
+        <label class="mb-2 font-bold text-gray-600 ml-2 text-sm" for="name">Nome</label>
+        <input
+            class="mb-3 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="name" type="text" placeholder="Seu nome aqui" required>
+
+        <label class="mb-2 font-bold text-gray-600 ml-2 text-sm" for="email">E-mail</label>
+        <input
+            class="mb-3 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="email" type="email" placeholder="Seu e-mail aqui" required>
+
+        <label class="mb-2 font-bold text-gray-600 ml-2 text-sm" for="topic">Assunto</label>
+        <input
+            class="mb-3 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="topic" type="text" placeholder="Assunto do e-mail aqui" required>
+
+        <label class="mb-2 font-bold text-gray-600 ml-2 text-sm" for="message">Mensagem</label>
+        <textarea
+            class="mb-6 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none"
+            id="message" placeholder="Sua mensagem aqui" required></textarea>
+
+        <button
+            class="bg-gray-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit">
+            Enviar
+        </button>
+    </form>
 </div>

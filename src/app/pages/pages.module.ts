@@ -18,7 +18,8 @@ import { RouterModule, Router } from '@angular/router';
     ContactComponent
   ],
   imports: [
-    RouterModule
+    RouterModule,
+    CommonModule
   ]
 })
 export class PagesModule { }
