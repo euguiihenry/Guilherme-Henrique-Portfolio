@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { GetProjectsService } from 'src/app/common/services/get-projects/get-projects.service';
+import { Project } from '../../common/services/get-projects/projects-interface';
 
 @Component({
   selector: 'app-projects',
@@ -6,30 +8,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent {
-  items = [
-    {
-      title: 'Square 1',
-      subtitle: 'Subtitle for Square 1',
-      description: 'Description for Square 1',
-      imgSrc: 'https://via.placeholder.com/400x400'
-    },
-    {
-      title: 'Square 2',
-      subtitle: 'Subtitle for Square 2',
-      description: 'Description for Square 2',
-      imgSrc: 'https://via.placeholder.com/400x400'
-    },
-    {
-      title: 'Square 3',
-      subtitle: 'Subtitle for Square 3',
-      description: 'Description for Square 3',
-      imgSrc: 'https://via.placeholder.com/400x400'
-    },
-    {
-      title: 'Square 4',
-      subtitle: 'Subtitle for Square 4',
-      description: 'Description for Square 4',
-      imgSrc: 'https://via.placeholder.com/400x400'
-    }
-  ];
+  projects: Project[] = [];;
+
+  constructor(private projectsJSON: GetProjectsService) {
+
+  }
+
+  getProjects() {
+    this.projectsJSON.getData().subscribe( (response: Project[]) => {
+      
+/*       this.projects.push(response)
+      console.log(this.projects) */
+
+      for (const e of response) {
+        this.projects[e.id] = e;
+      }
+
+      console.log(this.projects);
+    })
+  }
+
+  ngOnInit() {
+    this.getProjects();
+  }
 }

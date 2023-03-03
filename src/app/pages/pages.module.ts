@@ -7,8 +7,6 @@ import { AcademicComponent } from './academic/academic.component';
 import { ContactComponent } from './contact/contact.component';
 import { RouterModule, Router } from '@angular/router';
 
-
-
 @NgModule({
   declarations: [
     HomeComponent,

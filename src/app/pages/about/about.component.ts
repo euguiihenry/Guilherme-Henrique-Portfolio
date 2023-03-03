@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
-
+  phrases = [
+    'phrase1',
+    'phrase2',
+    'phrase3'
+  ];
 }
