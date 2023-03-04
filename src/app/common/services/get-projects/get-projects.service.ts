@@ -9,16 +9,16 @@ import { environment } from '../../../../environments/environment.prod';
   providedIn: 'root'
 })
 export class GetProjectsService {
-  readonly URL: string;
-  readonly api = environment.apiUrl;
 
+  constructor(private http: HttpClient) { }
 
-  constructor(private http: HttpClient) {
-    this.URL = "https://raw.githubusercontent.com/euguiihenry/portfolio-database/main/projects.json?token=" + this.api;
+  getAPI() {
+    return environment.PROJECTS;
   }
 
   getData() {
-    console.log(this.api)
-    return this.http.get<Project[]>(this.URL);
+    const mainURL = "https://raw.githubusercontent.com/euguiihenry/portfolio-database/main/projects.json?token="; 
+    const api = this.getAPI();
+    return this.http.get<Project[]>(mainURL + api);
   };
 }

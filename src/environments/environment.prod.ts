@@ -1,6 +1,6 @@
 
 export const environment = {
     production: true,
-    apiKey: process.env['PROJECTS_KEY'],
-    apiUrl: process.env['PROJECTS_KEY']
+    PROJECTS: process.env['PROJECTS'] || '',
+    ABOUT_PHRASES: process.env['ABOUT_PHRASES'] || ''
 };
