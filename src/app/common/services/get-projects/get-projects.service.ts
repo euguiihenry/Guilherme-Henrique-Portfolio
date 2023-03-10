@@ -13,12 +13,14 @@ export class GetProjectsService {
   constructor(private http: HttpClient) { }
 
   getAPI() {
-    return environment.PROJECTS;
+    const api = environment.PROJECTS;
+    const url = "https://raw.githubusercontent.com/euguiihenry/portfolio-database/8918d242ea4b179ea7ebfa3925fd40dd1a795759/projects-global/projects-info.json?token=";
+    return `${url}${api}`;
   }
 
   getData() {
-    const mainURL = "https://raw.githubusercontent.com/euguiihenry/portfolio-database/main/projects.json?token="; 
     const api = this.getAPI();
-    return this.http.get<Project[]>(mainURL + api);
+    console.log(api);
+    return this.http.get<Project[]>(api);
   };
 }

@@ -16,6 +16,7 @@ export class AboutComponent {
 
   ngOnInit(): void {
     this.getAboutPhrases.getAboutPhrases().subscribe((phrase: AboutPhrase) => {
+      console.log(phrase);
       this.phrases = Object.values(phrase);
     });
   }

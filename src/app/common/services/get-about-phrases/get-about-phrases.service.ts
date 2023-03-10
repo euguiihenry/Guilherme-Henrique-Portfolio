@@ -15,9 +15,9 @@ export class GetAboutPhrasesService {
   }
 
   getAboutPhrases() {
-    const mainURL = "https://raw.githubusercontent.com/euguiihenry/portfolio-database/main/about-phrases.json?token=";
     const api = this.getAPI();
-
-    return this.http.get<any>(mainURL + api);
+    const url = "https://raw.githubusercontent.com/euguiihenry/portfolio-database/8918d242ea4b179ea7ebfa3925fd40dd1a795759/about-phrases-global/about.json?token="
+    console.log(`${url}${api}`);
+    return this.http.get<any>(`${url}${api}`);
   }
 }
