@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef, HostListener} from '@angular/core';
 import { RouterService } from '../../common/services/router-check/router.service';
 import { SiteLanguageService } from '../services/site-language/site-language.service';
 
@@ -8,49 +8,44 @@ import { SiteLanguageService } from '../services/site-language/site-language.ser
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
-  public showInfo: boolean = true;
-  public languageButton: boolean = true;
+  public showInfo: boolean = false;
+  public languageButton: boolean = false;
+
+  @ViewChild('dropdownLang') menu!: ElementRef;
+  @ViewChild('langBtnElement') langBtnElement!: ElementRef;
+  @ViewChild('infoBtnElement') infoBtnElement!: ElementRef;
+  @ViewChild('langueButtons') langueButtons!: ElementRef;
 
   constructor(readonly routerService: RouterService, private language: SiteLanguageService) {
 
   }
 
-  openInfo() {
-    this.showInfo = false;
+  @HostListener('document:click', ['$event']) onDocumentClick(event: MouseEvent) {
+    if(this.langBtnElement.nativeElement.contains(event.target)) {
+      this.handleLanguageMenu();
+
+    } else {
+      setTimeout(() => {
+        this.languageButton = false;
+      }, 300);
+    }
+
+    if(this.infoBtnElement.nativeElement.contains(event.target)) {
+      this.handleInfoMenu();
+    } else {
+      this.showInfo = false;
+    }
   }
 
-  closeInfo() {
-    this.showInfo = true;
-  }
-
-  checkLanguage() {
-
+  handleInfoMenu() {
+    this.showInfo = !this.showInfo;
   }
 
   handleLanguageMenu() {
-    
-
-    if(this.languageButton) {
-      this.languageButton = false;
-      
-    } else {
-      this.languageButton = true;
-    }
+    this.languageButton = !this.languageButton;
   }
 
-  handleLanguageChoice() {
-    const langue = localStorage.getItem('langue');
-
-    switch(langue) {
-      case 'pt':
-        console.log("The site's language is " + langue)
-        break;
-      case 'en':
-        break;
-      case 'es':
-        break;
-      case 'fr':
-        break;
-    }
+  handleLanguageChoice(language: string) {
+    this.language.setLanguage(language);
   }
 }

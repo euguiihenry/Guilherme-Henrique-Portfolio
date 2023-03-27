@@ -1,21 +1,28 @@
 import { Injectable, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SiteLanguageService {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  setLanguage(langue: string) {
-
+  public setLanguage(langue: string) {
+    this.saveLanguage(langue);
+    this.goHome();
   }
 
-  saveLanguage() {
+  saveLanguage(langue: string) {
+    localStorage.setItem('langue', langue);
+  }
 
+  goHome() {
+    this.router.navigate(['/home']);
   }
 
   getLanguage() {
-
+    const langue = localStorage.getItem('langue');
+    return langue;
   }
 }

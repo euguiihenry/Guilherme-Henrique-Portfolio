@@ -11,12 +11,12 @@ export class GetAboutPhrasesService {
   constructor(private http: HttpClient) { }
 
   getAPI() {
-    return environment.ABOUT_PHRASES;
+    const url="https://raw.githubusercontent.com/euguiihenry/portfolio-database/8918d242ea4b179ea7ebfa3925fd40dd1a795759/about-phrases-global/about.json?token="
+    return `${environment.ABOUT_PHRASES}`
   }
 
   getAboutPhrases() {
-    const api = this.getAPI();
-    console.log(api);
-    return this.http.get<any>(api);
+
+    return this.http.get<any>(this.getAPI());
   }
 }

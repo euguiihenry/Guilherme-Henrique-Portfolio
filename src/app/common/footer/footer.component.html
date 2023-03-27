@@ -1,4 +1,4 @@
-<div class="fixed z-10 inset-0" [ngClass]="{'hidden overflow-hidden': showInfo}" id="modal">
+<div class="fixed z-10 inset-0" [ngClass]="{'hidden overflow-hidden': !showInfo}" id="modal">
     <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
         <div class="fixed inset-0 transition-opacity">
             <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
@@ -12,14 +12,22 @@
                         Créditos Gerais
                     </h3>
                     <div class="mt-2">
-                        
-                        <span class="text-sm leading-5 text-gray-500">Ícones providos por <a href="https://fontawesome.com/icons" target="_blank" rel="noopener noreferrer" class="underline">Font Awesome</a></span>
+
+                        <span class="text-sm leading-5 text-gray-500">Ícones providos por <a
+                                href="https://fontawesome.com/icons" target="_blank" rel="noopener noreferrer"
+                                class="underline">Font Awesome</a></span>
                         <br>
-                        <span class="text-sm leading-5 text-gray-500">Bandeira Brasileira provida por <a href="https://www.flaticon.com/free-icons/brazil" target="_blank" rel="noopener noreferrer" class="underline">Freepik - Flaticon</a></span>
+                        <span class="text-sm leading-5 text-gray-500">Bandeira Brasileira provida por <a
+                                href="https://www.flaticon.com/free-icons/brazil" target="_blank"
+                                rel="noopener noreferrer" class="underline">Freepik - Flaticon</a></span>
                         <br>
-                        <span class="text-sm leading-5 text-gray-500">Bandeira Britânica provida por <a href="https://www.flaticon.com/free-icons/uk-flag" target="_blank" rel="noopener noreferrer" class="underline">Freepik - Flaticon</a></span>
+                        <span class="text-sm leading-5 text-gray-500">Bandeira Britânica provida por <a
+                                href="https://www.flaticon.com/free-icons/uk-flag" target="_blank"
+                                rel="noopener noreferrer" class="underline">Freepik - Flaticon</a></span>
                         <br>
-                        <span class="text-sm leading-5 text-gray-500">Logo digitalizada por <a href="https://www.behance.net/vvianvasconc" class="underline">Vívian Vasconcelos</a></span>
+                        <span class="text-sm leading-5 text-gray-500">Logo digitalizada por <a
+                                href="https://www.behance.net/vvianvasconc" class="underline">Vívian
+                                Vasconcelos</a></span>
                     </div>
                 </div>
             </div>
@@ -27,11 +35,21 @@
                 <span class="flex w-full rounded-md shadow-sm">
                     <button type="button"
                         class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-blue-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:shadow-outline-blue active:bg-blue-700 transition ease-in-out duration-150 sm:text-sm sm:leading-5"
-                        (click)="closeInfo()"> Fechar
+                        (click)="handleInfoMenu()"> Fechar
                     </button>
                 </span>
             </div>
         </div>
+    </div>
+</div>
+<div id="container" class="fixed inset-0 transition-opacity" [ngClass]="{'hidden overflow-hidden': !languageButton}">
+    <div id="dropdownTop" #dropdownLang class="z-10 bg-white rounded-lg shadow w-40">
+        <div class="buttons">
+            <button class="dropdown-btn" #langueButtons (click)="handleLanguageChoice('en')"><img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" alt="USA Flag" class="w-7 h-6 mr-2 rounded"> English</button>
+            <button class="dropdown-btn" #langueButtons (click)="handleLanguageChoice('fr')"><img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" alt="France Flag" class="w-7 h-6 mr-2 rounded"> French</button>
+            <button class="dropdown-btn" #langueButtons (click)="handleLanguageChoice('es')"><img src="https://cdn.countryflags.com/thumbs/spain/flag-400.png" alt="Spain Flag" class="w-7 h-6 mr-2 rounded"> Spanish</button>
+            <button class="dropdown-btn" #langueButtons (click)="handleLanguageChoice('pt')"><img src="https://cdn.countryflags.com/thumbs/portugal/flag-400.png" alt="Portugal Flag" class="w-7 h-6 mr-2 rounded"> Portuguese</button>
+        </div>    
     </div>
 </div>
 
@@ -65,10 +83,11 @@
     </div>
 
     <div class="footer-buttons flex justify-items-center gap-1 flex-wrap items-center">
-        <button class="nav-buttons p-2" (click)="handleLanguageMenu()">
+        <button #langBtnElement class="nav-buttons p-2">
             <!-- <img class="img-bt" src="../../../assets/img/englishLanguage.png"> -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="w-6 h-6">
-                <path d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/>
+                <path
+                    d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z" />
             </svg>
         </button>
 
@@ -82,7 +101,7 @@
 
         <button
             [ngClass]="{'hide': routerService.isActive('about') || routerService.isActive('projects') || routerService.isActive('academic') || routerService.isActive('contact')}"
-            class="nav-buttons p-2 ml-2" (click)="openInfo()">
+            class="nav-buttons p-2 ml-2" #infoBtnElement>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" class="w-6 h-6">
                 <path
                     d="M48 80a48 48 0 1 1 96 0A48 48 0 1 1 48 80zM0 224c0-17.7 14.3-32 32-32H96c17.7 0 32 14.3 32 32V448h32c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H64V256H32c-17.7 0-32-14.3-32-32z" />

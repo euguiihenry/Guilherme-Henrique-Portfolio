@@ -7,5 +7,4 @@ platformBrowserDynamic().bootstrapModule(AppModule)
 
 if(localStorage.getItem('langue') == null) {
   localStorage.setItem('langue', 'pt');
-  console.log(localStorage.getItem('langue'));
 } 

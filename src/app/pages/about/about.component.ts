@@ -1,3 +1,4 @@
+import { SiteLanguageService } from './../../common/services/site-language/site-language.service';
 import { Component } from '@angular/core';
 import { GetAboutPhrasesService } from '../../common/services/get-about-phrases/get-about-phrases.service';
 import { AboutPhrase } from '../../common/services/get-about-phrases/about-phrases-interface';
@@ -8,16 +9,17 @@ import { AboutPhrase } from '../../common/services/get-about-phrases/about-phras
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
-  constructor(private getAboutPhrases: GetAboutPhrasesService) {
+  constructor(private getAboutPhrases: GetAboutPhrasesService, private siteLanguageService: SiteLanguageService) {
 
   }
 
-  phrases:string[] = [];
+  phrases:AboutPhrase[] = [];
 
   ngOnInit(): void {
     this.getAboutPhrases.getAboutPhrases().subscribe((phrase: AboutPhrase) => {
-      console.log(phrase);
-      this.phrases = Object.values(phrase);
+      const langue = this.siteLanguageService.getLanguage();
+      const phrases = phrase[langue!]
+      this.phrases = Object.values(phrases);
     });
   }
 }
