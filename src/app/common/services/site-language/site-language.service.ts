@@ -27,9 +27,7 @@ export class SiteLanguageService {
   }
 
   reload() {
-    setTimeout(() => {
-      window.location.reload();
-    }, 200)
+    window.location.reload();
   }
 
   getLanguage() {
