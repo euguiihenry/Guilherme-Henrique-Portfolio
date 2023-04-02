@@ -17,31 +17,31 @@
             <a routerLink="/home" routerLinkActive="current" 
             [ngClass]="{ 'current link-margin ': routerService.isActive('home'), 'hide': routerService.isActive('contact') }" 
             class="block mt-4 lg:inline-block lg:mt-0 text-gray-400 hover:opacity-60 uppercase nav-link">
-                Início
+                {{objectStr.home}}
             </a>
 
             <a routerLink="/about" routerLinkActive="current" 
             [ngClass]="{ 'current link-margin': routerService.isActive('about'), 'hide': routerService.isActive('contact') }"
             class="block mt-4 lg:inline-block lg:mt-0 text-gray-400 hover:opacity-60 uppercase nav-link">
-                Sobre
+                {{objectStr.about}}
             </a>
 
             <a routerLink="/projects" routerLinkActive="current" 
             [ngClass]="{ 'current link-margin': routerService.isActive('projects'), 'hide': routerService.isActive('home') || routerService.isActive('contact') }" 
             class="block mt-4 lg:inline-block lg:mt-0 text-gray-400 hover:opacity-60 uppercase nav-link">
-                Projetos
+                {{objectStr.projects}}
             </a>
 
             <a routerLink="/academic" routerLinkActive="current"
             [ngClass]="{ 'current link-margin': routerService.isActive('academic'), 'hide': routerService.isActive('home') || routerService.isActive('contact') }" 
-            class="block mt-4 lg:inline-block lg:mt-0 text-gray-400 hover:opacity-60 uppercase nav-link">
-                Acadêmico
+            class="block mt-4 lg:inline-block lg:mt-0 text-gray-400 hover:opacity-60 uppercase nav-link ">
+                {{objectStr.academic}}
             </a>
 
             <a routerLinkActive="current"
             [ngClass]="{ 'current link-margin': routerService.isActive('contact'), 'hide': routerService.isActive('home') || routerService.isActive('about') || routerService.isActive('projects') || routerService.isActive('academic') }" 
             class="block mt-4 ml-4 lg:inline-block lg:mt-0 text-gray-400 uppercase nav-link justify-self-center">
-                Contato
+            {{objectStr.contact}}
             </a>
         </div>
         
@@ -49,13 +49,13 @@
 
     <div class="flex justify-end">
         <button routerLink="/contact" [ngClass]="{ 'hide': routerService.isActive('contact') }"
-        class="action-button text-sm text-white p-2 px-3 ml-2 rounded-lg text-center font-semibold uppercase">
-            <p class="font-bold">Contate-me</p>
+        class="action-button text-sm text-white p-2 rounded-lg text-center font-semibold uppercase">
+            <p class="font-bold">{{objectStr.contact}}</p>
         </button>
         
         <button routerLink="/home" [ngClass]="{'hide': routerService.isActive('about') || routerService.isActive('projects') || routerService.isActive('academic') || routerService.isActive('home')}"
         class="action-button text-sm text-white p-2 px-3 ml-2 rounded-lg text-center font-semibold uppercase">
-            <p class="font-bold">Início</p>
+            <p class="font-bold">{{objectStr.home}}</p>
         </button>
     </div>
 </nav>

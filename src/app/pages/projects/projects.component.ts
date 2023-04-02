@@ -13,6 +13,7 @@ export class ProjectsComponent {
   public info: ProjectInfo[] = [];
   public image: ProjectImages[] = [];
   public project: any;
+  public knows: string = "";
 
   constructor(private projectsJSON: GetProjectsService, private languageService: SiteLanguageService) { }
 
@@ -43,7 +44,23 @@ export class ProjectsComponent {
     console.log('Opening card: ' + title);
   }
 
+  defineLangue() {
+    const langueStr = localStorage.getItem('langueObj');
+    
+    if (langueStr) {
+      try {
+        const langueObj = JSON.parse(langueStr);
+
+        this.knows = langueObj.project.knows;
+        
+      } catch (e) {
+        console.error('Failed to parse localStorage item: ', e);
+      }
+    }
+  }
+
   ngOnInit(): void {
+    this.defineLangue();
     this.getData();
   }
 }

@@ -1,6 +1,5 @@
-import { Component, OnInit, ChangeDetectorRef, EventEmitter } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { GetCurrentRouteService } from '../services/get-current-route/get-current-route.service';
-import { Router } from '@angular/router';
 import { RouterService } from '../services/router-check/router.service';
 
 @Component({
@@ -12,13 +11,41 @@ import { RouterService } from '../services/router-check/router.service';
 export class HeaderComponent implements OnInit {
   currentURL: string;
   className: string
-  //public status: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  public objectStr = {
+    home: "",
+    about: "",
+    projects: "",
+    academic: "",
+    contact: ""
+  }
+
+  defineLangue() {
+    const langueStr = localStorage.getItem('langueObj');
+
+    if (langueStr) {
+      try {
+        const langueObj = JSON.parse(langueStr);
+
+        this.objectStr.home = langueObj.navbar.home;
+        this.objectStr.about = langueObj.navbar.about;
+        this.objectStr.projects = langueObj.navbar.projects;
+        this.objectStr.academic = langueObj.navbar.academic;
+        this.objectStr.contact = langueObj.navbar.contact;
+
+      } catch (e) {
+        console.error('Failed to parse localStorage item: ', e);
+      }
+    }
+  }
 
   constructor(private currentRouteService: GetCurrentRouteService, private changeDetectorRef: ChangeDetectorRef, readonly routerService: RouterService) {
     this.currentURL = '';
     this.className = '';
   }
   ngOnInit(): void {
+    this.defineLangue();
+
     this.currentRouteService.getCurrentRoute().subscribe(route => {
       this.currentURL = route;
     })

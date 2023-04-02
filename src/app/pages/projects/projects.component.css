@@ -13,3 +13,11 @@
 .mb-4 {
     margin-bottom: 1rem;
 }
+
+.openCardBtn{
+    background-color: #4B5E75;
+    color: #E3E6FA;
+    font-size: smaller;
+    border-radius: 0.6rem;
+    padding: 0 0.6rem;
+}

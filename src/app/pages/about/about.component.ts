@@ -9,13 +9,27 @@ import { AboutPhrase } from '../../common/services/get-about-phrases/about-phras
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
-  constructor(private getAboutPhrases: GetAboutPhrasesService, private siteLanguageService: SiteLanguageService) {
-
-  }
+  public title: string = '';
+  constructor(private getAboutPhrases: GetAboutPhrasesService, private siteLanguageService: SiteLanguageService) { }
 
   phrases:AboutPhrase[] = [];
 
+  defineLangue() {
+    const langueStr = localStorage.getItem('langueObj');
+    
+    if (langueStr) {
+      try {
+        const langueObj = JSON.parse(langueStr);
+        this.title = langueObj.about.title;
+      } catch (e) {
+        console.error('Failed to parse localStorage item: ', e);
+      }
+    }
+  }
+
   ngOnInit(): void {
+    this.defineLangue();
+
     this.getAboutPhrases.getAboutPhrases().subscribe((phrase: AboutPhrase) => {
       const langue = this.siteLanguageService.getLanguage();
       const phrases = phrase[langue!]

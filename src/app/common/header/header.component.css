@@ -40,7 +40,7 @@
 .action-button{
     background-color: var(--shadow-blue-primary-light-theme);
     border-radius: 1.25em;
-    width: 8.1em;
+    width: 8rem;
     height: 3em;
 }
 

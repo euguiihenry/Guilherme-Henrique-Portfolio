@@ -1,9 +1,9 @@
 <section class="flex flex-col lg:flex-row lg:max-w-6xl mx-auto mt-9 flex-grow">
     <div class="lg:w-1/2 p-8 ">
         <div class="mb-4 flex-col justify-center ">
-            <p> Hey, eu sou</p>
-            <h1 class="text-6xl font-bold title">Guilherme</h1>
-            <p class="text-gray-500 mt-2">Graduando de Ciência da Computação apaixonado por UI/UX design e idiomas.</p>
+            <p>{{objectStr.upperTitle}}</p>
+            <h1 class="text-6xl font-bold title">{{objectStr.name}}</h1>
+            <p class="text-gray-500 mt-2">{{objectStr.description}}</p>
         </div>
         
         <div class="flex gap-4 flex-wrap justify-around mt-6">
@@ -47,11 +47,11 @@
 <section class="flex flex-wrap justify-center gap-3 p-7">
     <button routerLink="/projects" class="bg-cover bg-center h-14 w-48 special-btn"
         style="background-image: url(../../../assets/img/projects-btn-img.jpg);">
-        <span class="font-bold">Projetos</span>
+        <span class="font-bold">{{objectStr.projectBtn}}</span>
     </button>
 
     <button routerLink="/academic" class="bg-cover bg-center h-14 w-48 special-btn"
         style="background-image: url(../../../assets/img/academic-btn-img.jpg); ">
-        <span class="font-bold">Acadêmico</span>
+        <span class="font-bold">{{objectStr.academicBtn}}</span>
     </button>
 </section>
