@@ -12,7 +12,7 @@ export class AppComponent {
   constructor(private langueService: SiteLanguageService) {}
 
   ngOnInit(): void {
-    if(localStorage.getItem('langue') == null) {
+    if(localStorage.getItem('langue') === null || localStorage.getItem('langueObj') === null) {
       this.langueService.setLanguage('pt');
     }
   }
