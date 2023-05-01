@@ -16,7 +16,7 @@ export class ArrangeLanguageService {
 
   private async defineLanguageObject(langue: string) {
     try{
-      const langueObjects: any = await axios.get("http://192.168.100.62:3001/api/langue-objects");
+      const langueObjects: any = await axios.get("http://guilhermehenrique.vercel.app:3001/api/langue-objects");
       const langueData = langueObjects.data;
 
       if (langueData) {

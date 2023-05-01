@@ -1,0 +1,11 @@
+{
+  "routes": [
+      {
+          "src": "/api/langue-objects",
+          "methods": [
+              "GET"
+          ],
+          "dest": "/api/defaultObjects.js"
+      }
+  ]
+}
