@@ -1,0 +1,39 @@
+.current::after {
+  content: "";
+  display: block;
+  width: 1em;
+  height: 0.29em;
+  background-color: var(--text-light);
+  border-radius: 3em;
+  margin: 0.19em auto;
+  color: var(--text-light);
+}
+
+.current {
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.hide{
+  display: none;
+  visibility: hidden;
+}
+
+.link-margin{
+  margin-top: 0.7em;
+}
+
+.nav-link{
+  font-weight: 600;
+}
+
+.action-button{
+  background-color: var(--cta1-light);
+  border-radius: 1.25em;
+  width: 8rem;
+  height: 3em;
+}
+
+.margin-right{
+  padding-left: 1em;
+}

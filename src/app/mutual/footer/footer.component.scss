@@ -1,0 +1,51 @@
+footer{
+  width: 100%;
+  height: 100%;
+}
+
+.nav-buttons {
+  background-color: var(--cta3-light);
+  border-radius: 1.1em;
+}
+
+.social-icons-svg{
+  width: 1.6em;
+  height: 1.6em;
+}
+
+.hide{
+  display: none;
+  visibility: hidden;
+}
+
+#container{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-shadow: 0 30px 30px #999;
+}
+
+#dropdownTop{
+  position: absolute;
+  bottom: -2em;
+  right: 3em;
+  border-radius: 1em;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 0.5em;
+}
+
+.dropdown-btn{
+  display: flex;
+  padding: 0.5em;
+  margin: 0.3em 0.5em;
+  gap: 0.2em;
+}
+
+.copy-tag{
+  color: var(--2nd-text-light);
+}

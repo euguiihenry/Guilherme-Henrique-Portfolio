@@ -1,0 +1,15 @@
+:root{
+  /* Light Theme Colors
+  =============================================================*/
+    --bg-light: #FFF5E9;
+    --cta1-light: #FFBE95;
+    --cta2-light: #F2C6AA;
+    --cta3-light: #E0DCCC;
+
+  /* Dark Theme Colors
+  =============================================================*/
+    --bg-dark: #1B1B1B;
+    --cta1-dark: var(--cta1-light);
+    --cta2-dark: var(--cta2-light);
+    --cta3-dark: var(--cta3-light);
+}

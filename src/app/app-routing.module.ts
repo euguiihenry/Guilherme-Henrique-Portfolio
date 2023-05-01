@@ -1,41 +1,42 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { AboutComponent } from './pages/about/about.component';
-import { AcademicComponent } from './pages/academic/academic.component';
-import { ContactComponent } from './pages/contact/contact.component';
-import { ProjectsComponent } from './pages/projects/projects.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ProjectCardComponent } from './project-card/project-card.component';
 
 const routes: Routes = [
   {
-    path:'',
-    redirectTo:'home',
-    pathMatch:'full'
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
   },
   {
-    path:'home',
-    component: HomeComponent
+    path: 'home',
+    component: HomeComponent,
   },
   {
-    path:'about',
+    path: 'about',
     component: AboutComponent
   },
   {
-    path:'academic',
-    component: AcademicComponent
-  },
-  {
-    path:'contact',
+    path: 'contact',
     component: ContactComponent
   },
   {
-    path:'projects',
+    path: 'projects',
     component: ProjectsComponent
   },
+  {
+    path: 'project-card',
+    component: ProjectCardComponent
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

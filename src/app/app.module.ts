@@ -3,20 +3,35 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RecurrentModule } from './common/recurrent.module';
-import { PagesModule } from './pages/pages.module';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ContactComponent } from './contact/contact.component';
+import { ProjectCardComponent } from './project-card/project-card.component';
+import { HeaderComponent } from './mutual/header/header.component';
+import { FooterComponent } from './mutual/footer/footer.component';
+import { MutualModule } from './mutual/mutual.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    AboutComponent,
+    ProjectsComponent,
+    ContactComponent,
+    ProjectCardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RecurrentModule,
-    PagesModule
+    MutualModule,
+    RouterModule
   ],
-  providers: [],
+  providers: [
+    HeaderComponent,
+    FooterComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
