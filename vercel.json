@@ -1,11 +1,19 @@
 {
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
-      {
-          "src": "/api/langue-objects",
-          "methods": [
-              "GET"
-          ],
-          "dest": "/api/defaultObjects.js"
-      }
+    {
+      "src": "/api/langue-objects",
+      "methods": ["GET"],
+      "dest": "api/langue-objects.js"
+    }
+  ],
+  "files": [
+    "/api/public/langue.json"
   ]
 }
