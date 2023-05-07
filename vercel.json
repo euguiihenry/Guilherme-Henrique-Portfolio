@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/**/*.js",
+      "src": "api/*.js",
       "use": "@vercel/node"
     }
   ],
@@ -10,10 +10,7 @@
     {
       "src": "/api/langue-objects",
       "methods": ["GET"],
-      "dest": "api/langue-objects.js"
+      "dest": "api/langueObjects.js"
     }
-  ],
-  "files": [
-    "/api/public/langue.json"
   ]
 }

@@ -14,25 +14,33 @@ export class ArrangeLanguageService {
 
   private saveLanguage = (langue: string): void => localStorage.setItem('langue', langue);
 
-  private async defineLanguageObject(langue: string) {
-    try{
-      const langueObjects: any = await axios.get("http:localhost:3000/api/langue-objects");
-      const langueData = langueObjects.data;
+  public async tryLangue(langue: string) {
+    try {
+      const url = 'http://localhost:3000/api/langue-objects';
+      const data = await axios.get(url);
 
-      if (langueData) {
-        const langueObj = JSON.stringify(langueData[langue]);
+      let info = await data.data;
+      console.log(info);
+
+      if (info) {
+        const langueObj = JSON.stringify(info[langue]);
 
         localStorage.setItem('langueObj', langueObj);
       }
-    } catch(error) {
-      console.log("It was not possible to access the language object server!")
+
+      return info;
+    } catch (error) {
+      console.log("It was not possible to access the language object server!");
+      console.log(error);
     }
   }
 
-  public setLanguage(langue: string) {
+  public async setLanguage(langue: string) {
     this.saveLanguage(langue);
-    this.defineLanguageObject(langue);
-    this.reload();
+
+    if (await this.tryLangue(langue)) {
+      this.reload();
+    }
   }
 
   private getLanguage() {
