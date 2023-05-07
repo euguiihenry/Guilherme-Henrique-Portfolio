@@ -5,6 +5,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectCardComponent } from './project-card/project-card.component';
+import { ErrorPageComponent } from './mutual/error-page/error-page.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'project-card',
     component: ProjectCardComponent
+  },
+  {
+    path: 'error-page',
+    component: ErrorPageComponent
   }
 ];
 

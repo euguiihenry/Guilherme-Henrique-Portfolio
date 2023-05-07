@@ -12,6 +12,7 @@ import { HeaderComponent } from './mutual/header/header.component';
 import { FooterComponent } from './mutual/footer/footer.component';
 import { MutualModule } from './mutual/mutual.module';
 import { RouterModule } from '@angular/router';
+import { ErrorPageComponent } from './mutual/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { RouterModule } from '@angular/router';
   ],
   providers: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ErrorPageComponent
   ],
   bootstrap: [AppComponent]
 })

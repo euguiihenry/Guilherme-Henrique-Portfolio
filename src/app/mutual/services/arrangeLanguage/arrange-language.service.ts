@@ -2,13 +2,14 @@ import { Location } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import axios from 'axios';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArrangeLanguageService {
 
-  constructor(private location: Location, private http: HttpClient) { }
+  constructor(private location: Location, private http: HttpClient, private router: Router) { }
 
   private reload = (): void => window.location.reload();
 
@@ -32,6 +33,7 @@ export class ArrangeLanguageService {
     } catch (error) {
       console.log("It was not possible to access the language object server!");
       console.log(error);
+      this.router.navigate(['/error-page']);
     }
   }
 
