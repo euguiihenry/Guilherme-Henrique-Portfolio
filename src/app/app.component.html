@@ -1,3 +1,5 @@
-<app-header *ngIf="!isErrorPageLoaded()"></app-header>
-<router-outlet></router-outlet>
-<app-footer *ngIf="!isErrorPageLoaded()"></app-footer>
+<div class="container-div">
+  <app-header *ngIf="!isErrorPageLoaded()"></app-header>
+  <router-outlet></router-outlet>
+  <app-footer *ngIf="!isErrorPageLoaded()"></app-footer>
+</div>

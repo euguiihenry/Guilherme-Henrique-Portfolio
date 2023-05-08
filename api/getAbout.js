@@ -1,0 +1,33 @@
+const express = require('express');
+const cors = require('cors');
+const axios = require('axios');
+const dotenv = require('dotenv');
+
+dotenv.config({ path: '../.env' });
+
+const app = express();
+
+app.use(cors(
+  {
+    allowedHeaders: ['Content-Type','Access-Control-Allow-Origin']
+  }
+));
+
+app.get('/api/get-about', async (req, res, next) => {
+  try{
+      const url = process.env.GET_ABOUT_URL;
+      const data = await axios.get(url);
+      const info = data.data;
+      res.send(info);
+
+  } catch (error) {
+      next(error);
+  }
+});
+
+app.use((error, req, res, next) => {
+  console.error(error.stack);
+  res.status(500).send('Error retrieving data! Something went wrong!');
+});
+
+module.exports = app;

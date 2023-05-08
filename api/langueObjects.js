@@ -1,8 +1,12 @@
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
+const dotenv = require('dotenv');
+
+dotenv.config({ path: '../.env' });
 
 const app = express();
+
 app.use(cors(
   {
     allowedHeaders: ['Content-Type','Access-Control-Allow-Origin']
@@ -11,7 +15,7 @@ app.use(cors(
 
 app.get('/api/langue-objects', async (req, res, next) => {
   try{
-      const url = 'https://gitfront.io/r/euguiihenry/jmb1cDCfAn54/portfolio-database/raw/langue-objects/langue.json'
+      const url = process.env.LANGUE_OBJECTS_URL;
       const data = await axios.get(url);
       const info = data.data;
       res.send(info);

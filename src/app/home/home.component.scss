@@ -13,8 +13,9 @@ button{
 }
 
 .special-btn{
-  box-shadow: 0px 25px 100px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 25px 100px 20px rgba(2, 2, 2, 0.2);
   text-shadow: 5px;
+  background-color: var(--cta2-light);
 }
 
 html{

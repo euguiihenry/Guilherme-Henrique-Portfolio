@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import axios from 'axios';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class ArrangeLanguageService {
 
   public async tryLangue(langue: string) {
     try {
-      const url = 'http://localhost:3000/api/langue-objects';
+      const url = environment.LANGUE_OBJECT_LINK;
       const data = await axios.get(url);
 
       let info = await data.data;
