@@ -1,1 +1,33 @@
-<p>contact works!</p>
+<div class="flex flex-col items-center">
+    <h2 class="text-5xl font-bold mb-2">{{objectStr.pageTitle}}</h2>
+    <p class="mb-8 text-sm">{{objectStr.pageSubtitle}}</p>
+
+    <form class="flex flex-col w-80 lg:w-2/4 form-contact">
+        <label class="mb-2 font-bold text-gray-600 ml-2 text-sm" for="name">{{objectStr.name}}</label>
+        <input
+            class="mb-3 shadow appearance-none rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-solid border-black h-12 border-2"
+            id="name" type="text" placeholder="Seu nome aqui" required>
+
+        <label class="mb-2 font-bold text-gray-600 ml-2 text-sm" for="email">{{objectStr.email}}</label>
+        <input
+            class="mb-3 shadow appearance-none rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-solid border-black h-12 border-2"
+            id="email" type="email" placeholder="Seu e-mail aqui" required>
+
+        <label class="mb-2 font-bold text-gray-600 ml-2 text-sm" for="topic">{{objectStr.subject}}</label>
+        <input
+            class="mb-3 shadow appearance-none rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-solid border-black h-12 border-2"
+            id="topic" type="text" placeholder="Assunto do e-mail aqui" required>
+
+        <label class="mb-2 font-bold text-gray-600 ml-2 text-sm" for="message">{{objectStr.message}}</label>
+        <textarea
+            class="mb-6 shadow appearance-none rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none border-solid border-black border-2"
+            id="message" placeholder="Sua mensagem aqui" required></textarea>
+
+        <div class="flex justify-center">
+            <button class="bg-gray-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-80" type="submit">
+                {{objectStr.sendBtn}}
+            </button>  
+        </div>
+        
+    </form>
+</div>
