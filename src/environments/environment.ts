@@ -1,6 +1,7 @@
 export const environment = {
   production: true,
-  ABOUT_LINK: "https://guilhermehenrique.vercel.app/api/",
-  PROJECTS_LINK: "https://guilhermehenrique.vercel.app/api/",
-  LANGUE_OBJECT_LINK: "https://guilhermehenrique.vercel.app/api/langue-objects",
+  HTTP_LINK: 'https://',
+  ABOUT_LINK: "/api/get-about",
+  PROJECTS_LINK: "/api/get-projects",
+  LANGUE_OBJECT_LINK: "/api/langue-objects",
 };

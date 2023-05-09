@@ -16,6 +16,10 @@ export class AppComponent {
   ngOnInit(): void {
     if(localStorage.getItem('langue') === null || localStorage.getItem('langueObj') === null)
       this.langueService.setLanguage('pt');
+
+    const url = this.currentRoute.getUrl();
+
+    console.log(url);
   }
 
   isErrorPageLoaded() {

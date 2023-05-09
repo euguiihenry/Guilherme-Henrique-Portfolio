@@ -17,4 +17,10 @@ export class GetCurrentRouteService {
       filter(event => event instanceof NavigationEnd),
       map(event => (event as NavigationEnd).url));
   }
+
+  getUrl(): any {
+    const url = window.location.href;
+    const first_part = url.split('/').reverse().join('/');
+    return first_part.split('/')[1];
+  }
 }

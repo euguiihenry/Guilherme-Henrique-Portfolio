@@ -11,3 +11,16 @@
     --text-dark: #FFF5E9;
     --2nd-text-dark: var(--2nd-text-light);
 }
+
+body, app-header, app-footer{
+  font-family: 'Open Sans', sans-serif;
+  font-size: medium;
+}
+
+.home-title {
+  font-family: 'Manrope', sans-serif;
+}
+
+app-header{
+  font-size: 0.88em;
+}

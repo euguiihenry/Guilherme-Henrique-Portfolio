@@ -4,13 +4,14 @@ import { HttpClient } from '@angular/common/http';
 import axios from 'axios';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.development';
+import { GetCurrentRouteService } from '../getCurrentRoute/get-current-route.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArrangeLanguageService {
 
-  constructor(private location: Location, private http: HttpClient, private router: Router) { }
+  constructor(private location: Location, private http: HttpClient, private router: Router, private currentRoute: GetCurrentRouteService) { }
 
   private reload = (): void => window.location.reload();
 
@@ -18,11 +19,10 @@ export class ArrangeLanguageService {
 
   public async tryLangue(langue: string) {
     try {
-      const url = environment.LANGUE_OBJECT_LINK;
+      const url = environment.HTTP_LINK + this.currentRoute.getUrl() + environment.LANGUE_OBJECT_LINK;
       const data = await axios.get(url);
 
       let info = await data.data;
-      console.log(info);
 
       if (info) {
         const langueObj = JSON.stringify(info[langue]);
@@ -41,7 +41,9 @@ export class ArrangeLanguageService {
   public async setLanguage(langue: string) {
     this.saveLanguage(langue);
 
-    if (await this.tryLangue(langue)) {
+    const returned = await this.tryLangue(langue)
+
+    if (returned) {
       this.reload();
     }
   }
