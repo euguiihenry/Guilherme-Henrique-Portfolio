@@ -1,1 +1,15 @@
-<p>projects works!</p>
+<div class="flex flex-wrap p-5">
+    <div *ngFor="let item of project, let i = index" class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2 mb-5">
+        <div class=" rounded-lg overflow-hidden">
+            <img src="{{ item.imgSrc }}" alt="{{ item.title }}" class="h-48 w-full object-cover rounded-lg" />
+            <div class="mt-2">
+                <div class="py-2 flex justify-between">
+                    <h2 class="font-bold text-lg mb-0.5">{{ item.title }}</h2>
+                    <button class="text-white text-base bg-slate-500 p-1 rounded openCardBtn" (click)="openCard(item.title)">{{knows}}</button>
+                </div>
+                <h3 class="text-gray-700 text-xs mb-0.5">{{ item.subtitle }}</h3>
+                <span class="text-gray-600 text-sm">{{ item.description }}</span>
+            </div>
+        </div>
+    </div>
+</div>

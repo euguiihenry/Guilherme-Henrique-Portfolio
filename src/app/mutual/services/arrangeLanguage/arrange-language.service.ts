@@ -48,7 +48,7 @@ export class ArrangeLanguageService {
     }
   }
 
-  private getLanguage() {
+  public getLanguage() {
     const langue = localStorage.getItem('langue');
     return langue;
   }
