@@ -23,4 +23,19 @@ export class GetCurrentRouteService {
     const first_part = url.split('/').reverse().join('/');
     return first_part.split('/')[1];
   }
+
+  getCompleteUrl(): any {
+    const url = window.location.href;
+    return url;
+  }
+
+  getRoutePath() {
+    const url = window.location.href;
+    const first_part = url.split('/').reverse().join('/');
+    return "/" + first_part.split('/')[0];
+  }
+
+  earlyLocation(path: string) {
+    localStorage.setItem('actualPath', path);
+  }
 }

@@ -34,6 +34,7 @@ export class ArrangeLanguageService {
     } catch (error) {
       console.log("It was not possible to access the language object server!");
       console.log(error);
+      this.currentRoute.earlyLocation(this.currentRoute.getRoutePath());
       this.router.navigate(['/error-page']);
     }
   }
