@@ -30,27 +30,20 @@ export class AboutComponent {
     }
   }
 
-  getLangueNumber(): number {
-    const num = -1;
-
-    return num;
-  }
-
   async getAboutInfo() {
     this.defineLangue();
-    let about = await this.aboutService.getData();
-    const langueStr = localStorage.getItem('langueObj');
 
-    console.log(about);
+    try {
+      const langueStr = localStorage.getItem('langue') || '';
+      const about = await this.aboutService.getData();
+      this.about = about[langueStr];
+      this.about = Object.values(this.about);
 
-    about = Object.values(about);
-
-    console.log(about);
-
-    this.about = about;
-
-    console.log('About: ', about);
+    } catch (error) {
+      console.error(error);
+    }
   }
+
 
   ngOnInit(): void {
     this.getAboutInfo();
