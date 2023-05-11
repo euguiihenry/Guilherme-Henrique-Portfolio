@@ -1,6 +1,7 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { GetCurrentRouteService } from '../services/getCurrentRoute/get-current-route.service';
 import { ArrangeLanguageService } from '../services/arrangeLanguage/arrange-language.service';
+import { Route } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
