@@ -4,6 +4,7 @@ import axios from "axios";
 import { environment } from 'src/environments/environment.development';
 import { GetCurrentRouteService } from '../mutual/services/getCurrentRoute/get-current-route.service';
 import { GetProjectsService } from '../mutual/services/getProjects/get-projects.service';
+import { Projects } from '../mutual/models/projects';
 
 @Component({
   selector: 'app-projects',
@@ -13,35 +14,10 @@ import { GetProjectsService } from '../mutual/services/getProjects/get-projects.
 export class ProjectsComponent {
   /*public info: ProjectInfo[] = [];
   public image: ProjectImages[] = [];*/
-  public project: any;
   public knows: string = "";
-  public info: any;
-  public img: any;
+  public projects: any = [];
 
-  constructor(/*private projectsJSON: GetProjectsService,*/private getProject: GetProjectsService, private languageService: ArrangeLanguageService, private currentRoute: GetCurrentRouteService) { }
-
-  /*getData() {
-    const info$ = this.projectsJSON.getInfo();
-    const image$ = this.projectsJSON.getImage();
-
-    forkJoin({ info: info$, image: image$ }).subscribe(({ info, image }) => {
-      this.info = info;
-      this.image = image;
-
-      this.combine(info);
-    });
-  }*/
-
-/*  combine(info: any) {
-    const languageString = Object.keys(this.info);
-    for (const key in languageString) {
-      if(languageString[key] === this.languageService.getLanguage()) {
-        const data = info[languageString[key]];
-        this.info = data;
-      }
-    }
-    this.project = this.info;
-  }*/
+  constructor(private getProject: GetProjectsService, private languageService: ArrangeLanguageService, private currentRoute: GetCurrentRouteService) { }
 
   openCard(title: string) {
     console.log('Opening card: ' + title);
@@ -55,6 +31,7 @@ export class ProjectsComponent {
         const langueObj = JSON.parse(langueStr);
 
         this.knows = langueObj.project.knows;
+        console.log(this.knows);
 
       } catch (e) {
         console.error('Failed to parse localStorage item: ', e);
@@ -62,8 +39,29 @@ export class ProjectsComponent {
     }
   }
 
+  async getProjectsInfo() {
+    try {
+      const langue = this.languageService.getLanguage();
+      const data = await this.getProject.getData();
+
+      const langueObj: any = data.data_info[langue];
+      const projects = langueObj.map((obj: any) => {
+        const imgObj = data.data_img.find((img: any) => img.id === obj.id);
+        return {
+          ...obj,
+          imgSrc: imgObj ? imgObj.imgSrc : null
+        };
+      });
+
+      this.projects = Object.values(projects);
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   ngOnInit(): void {
     this.defineLangue();
-    this.getProject.getData();
+    this.getProjectsInfo();
   }
 }

@@ -18,8 +18,6 @@ export class GetProjectsService {
 
       let info = await data.data;
 
-      console.log(info);
-
       return info;
 
     } catch (error) {

@@ -50,7 +50,12 @@ export class ArrangeLanguageService {
   }
 
   public getLanguage() {
-    const langue = localStorage.getItem('langue');
-    return langue;
+    try {
+      const langue = localStorage.getItem('langue');
+      return langue || '';
+    } catch (error) {
+      console.log(error);
+      return '';
+    }
   }
 }
