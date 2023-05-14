@@ -2,16 +2,19 @@ import { Component } from '@angular/core';
 import { ArrangeLanguageService } from './mutual/services/arrangeLanguage/arrange-language.service';
 import { GetCurrentRouteService } from './mutual/services/getCurrentRoute/get-current-route.service';
 import { Router } from '@angular/router';
+import { ArrangeLoadingService } from './mutual/services/arrangeLoading/arrange-loading.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent{
   title = 'henry-portfolio';
 
-  constructor(private langueService: ArrangeLanguageService, private currentRoute: GetCurrentRouteService, private router: Router) { }
+
+  constructor(private langueService: ArrangeLanguageService, private currentRoute: GetCurrentRouteService, private router: Router, public loading: ArrangeLoadingService) {
+  }
 
   ngOnInit(): void {
     if(localStorage.getItem('langue') === null || localStorage.getItem('langueObj') === null)
@@ -19,24 +22,12 @@ export class AppComponent {
 
     const url = this.currentRoute.getUrl();
 
-    console.log(url);
+    this.currentRoute.hasRouteChanged();
   }
 
   isErrorPageLoaded() {
     const answer = this.currentRoute.activePath('error-page');
 
     return answer;
-  }
-
-  shouldShowLoad() {
-    try {
-      const answer = localStorage.getItem('loadingScreen');
-
-      return answer;
-
-    } catch (error) {
-      console.log("Error while trying to load the loading screen!", error);
-      return true;
-    }
   }
 }

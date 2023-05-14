@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { Observable, filter, map } from 'rxjs';
+import { ArrangeLoadingService } from '../arrangeLoading/arrange-loading.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { Observable, filter, map } from 'rxjs';
 
 export class GetCurrentRouteService {
 
-  constructor(private router: ActivatedRoute, private route: Router) { }
+  constructor(private router: ActivatedRoute, private route: Router, private loading: ArrangeLoadingService) { }
 
   activePath = (route: string) => this.router.firstChild ? this.router.firstChild.snapshot.url[0].path === route : false;
 
@@ -37,5 +38,13 @@ export class GetCurrentRouteService {
 
   earlyLocation(path: string) {
     localStorage.setItem('actualPath', path);
+  }
+
+  hasRouteChanged(): any {
+    this.route.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.loading.resetBool();
+      }
+    });
   }
 }
