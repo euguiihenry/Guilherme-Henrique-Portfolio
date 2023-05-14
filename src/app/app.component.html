@@ -1,4 +1,5 @@
-<div class="container-div">
+<app-loading-page class="z-10" *ngIf="shouldShowLoad()"></app-loading-page>
+<div class="container-div z-0">
   <app-header *ngIf="!isErrorPageLoaded()"></app-header>
   <router-outlet></router-outlet>
   <app-footer *ngIf="!isErrorPageLoaded()"></app-footer>

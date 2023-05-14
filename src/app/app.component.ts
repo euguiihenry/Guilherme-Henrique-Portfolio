@@ -27,4 +27,16 @@ export class AppComponent {
 
     return answer;
   }
+
+  shouldShowLoad() {
+    try {
+      const answer = localStorage.getItem('loadingScreen');
+
+      return answer;
+
+    } catch (error) {
+      console.log("Error while trying to load the loading screen!", error);
+      return true;
+    }
+  }
 }

@@ -13,6 +13,7 @@ import { FooterComponent } from './mutual/footer/footer.component';
 import { MutualModule } from './mutual/mutual.module';
 import { RouterModule } from '@angular/router';
 import { ErrorPageComponent } from './mutual/error-page/error-page.component';
+import { LoadingPageComponent } from './mutual/loading-page/loading-page.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +28,13 @@ import { ErrorPageComponent } from './mutual/error-page/error-page.component';
     BrowserModule,
     AppRoutingModule,
     MutualModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [
     HeaderComponent,
     FooterComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    LoadingPageComponent
   ],
   bootstrap: [AppComponent]
 })

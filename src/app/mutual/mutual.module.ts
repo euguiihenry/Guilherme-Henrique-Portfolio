@@ -22,7 +22,8 @@ import { LoadingPageComponent } from './loading-page/loading-page.component';
   exports: [
     HeaderComponent,
     FooterComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    LoadingPageComponent
   ]
 })
 export class MutualModule { }
