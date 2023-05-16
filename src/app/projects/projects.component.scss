@@ -21,3 +21,13 @@
     border-radius: 0.6rem;
     padding: 0 0.6rem;
 }
+
+.project-card{
+  z-index: 20;
+  position: absolute;
+  width: 80%;
+  background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

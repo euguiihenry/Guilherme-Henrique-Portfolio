@@ -1,1 +1,66 @@
-<p>project-card works!</p>
+<ng-container>
+  <img [src]="project.imageUrl" [style.width]="'90%'" alt="Image" />
+
+  <div class="text-left mt-4">
+    <h2 class="text-3xl font-bold">
+      {{ project.subtitle }}
+    </h2>
+    <h1 class="text-4xl font-bold">
+      {{ project.title }}
+    </h1>
+  </div>
+
+  <h3 class="flex items-center mt-6">
+    <span class="mr-2">👀</span>
+    {{ project.headings.heading1 }}
+  </h3>
+  <p>{{ project.paragraphs.paragraph1 }}</p>
+
+  <div class="grid grid-cols-4 gap-4 mt-8">
+    <div class="flex items-center">
+      <p>
+        <strong>📅</strong> {{ project.timeline }}
+      </p>
+    </div>
+    <div class="flex items-center">
+      <p>
+        <strong>👥</strong> {{ project.myRole }}
+      </p>
+    </div>
+    <div class="flex items-center">
+      <p>
+        <strong>🚀</strong> {{ project.tech }}
+      </p>
+    </div>
+    <div class="flex items-center">
+      <p>
+        <strong>🔗</strong> {{ project.links }}
+      </p>
+    </div>
+  </div>
+
+  <h3 class="flex items-center mt-6">
+    <span class="mr-2">🌱</span>
+    {{ project.headings.heading2 }}
+  </h3>
+  <p>{{ project.paragraphs.paragraph2 }}</p>
+
+  <div class="flex mt-8">
+    <div class="w-1/2">
+      <img [src]="project.imageUrls.imageUrl1" alt="Image 1" />
+    </div>
+    <div class="w-1/2">
+      <img [src]="project.imageUrls.imageUrl2" alt="Image 2" />
+    </div>
+  </div>
+
+  <h3 class="flex items-center mt-6">
+    <span class="mr-2">🌱</span>
+    {{ project.headings.heading3 }}
+  </h3>
+  <p>{{ project.paragraphs.paragraph3 }}</p>
+
+  <button class="mt-8 mx-auto bg-gray-500 text-white font-bold py-2 px-4 rounded" (click)="projects.openedCard()">
+    Close
+  </button>
+</ng-container>

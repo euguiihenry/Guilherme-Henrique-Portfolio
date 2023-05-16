@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment.development';
 import { GetCurrentRouteService } from '../mutual/services/getCurrentRoute/get-current-route.service';
 import { GetProjectsService } from '../mutual/services/getProjects/get-projects.service';
 import { Projects } from '../mutual/models/projects';
+import { ProjectCardComponent } from '../project-card/project-card.component';
 
 @Component({
   selector: 'app-projects',
@@ -16,11 +17,13 @@ export class ProjectsComponent {
   public image: ProjectImages[] = [];*/
   public knows: string = "";
   public projects: any = [];
+  private opened = false;
 
   constructor(private getProject: GetProjectsService, private languageService: ArrangeLanguageService, private currentRoute: GetCurrentRouteService) { }
 
   openCard(title: string) {
     console.log('Opening card: ' + title);
+    this.openedCard();
   }
 
   defineLangue() {
@@ -58,6 +61,11 @@ export class ProjectsComponent {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  public openedCard(): boolean {
+    this.opened = !this.opened;
+    return this.opened
   }
 
   ngOnInit(): void {
