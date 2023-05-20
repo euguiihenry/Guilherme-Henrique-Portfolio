@@ -16,15 +16,16 @@ app.use(cors(
 app.get('/api/get-projects', async (req, res, next) => {
   try{
       const url_info = process.env.GET_PROJECTS_INFO_URL;
-      const data_info = await axios.get(url_info);
 
       const url_img = process.env.GET_PROJECTS_IMG_URL;
-      const data_img = await axios.get(url_img);
 
-      const info = data_info.data;
+      const [ data_info, data_img ] = await Promise.all([
+        axios.get(url_info),
+        axios.get(url_img)
+      ]);
 
       const data = {
-          data_info: Object.assign(info),
+          data_info: Object.assign(data_info.data),
           data_img: data_img.data
       }
       res.send(data);

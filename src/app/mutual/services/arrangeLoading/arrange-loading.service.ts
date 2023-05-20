@@ -17,7 +17,7 @@ export class ArrangeLoadingService {
 
   loadScreen = (): void => {
     this.disableScroll();
-    this.delay(2800)
+    this.delay(2500)
       .then(() => {
         this.bool = false;
         this.enableScroll();
