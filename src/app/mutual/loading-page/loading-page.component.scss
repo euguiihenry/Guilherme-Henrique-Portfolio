@@ -1,6 +1,8 @@
 .div-container {
   position: absolute;
   z-index: 100;
+  overflow:hidden !important;
+  width: 100%;
 
   .loading-elements{
     display: flex;
@@ -36,4 +38,3 @@
             transform: rotate(360deg);
   }
 }
-

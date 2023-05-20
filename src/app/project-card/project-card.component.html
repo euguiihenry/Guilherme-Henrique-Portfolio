@@ -16,7 +16,7 @@
   </h3>
   <p>{{ project.paragraphs.paragraph1 }}</p>
 
-  <div class="grid grid-cols-4 gap-4 mt-8">
+  <div class="grid grid-cols-4 gap-4 mt-8 info">
     <div class="flex items-center">
       <p>
         <strong>📅</strong> {{ project.timeline }}
@@ -60,7 +60,22 @@
   </h3>
   <p>{{ project.paragraphs.paragraph3 }}</p>
 
-  <button class="mt-8 mx-auto bg-gray-500 text-white font-bold py-2 px-4 rounded" (click)="projects.openedCard()">
+  <div class="flex mt-8">
+    <div class="w-1/2">
+      <img [src]="project.imageUrls.imageUrl1" alt="Image 1" />
+    </div>
+    <div class="w-1/2">
+      <img [src]="project.imageUrls.imageUrl2" alt="Image 2" />
+    </div>
+  </div>
+
+  <h3 class="flex items-center mt-6">
+    <span class="mr-2">🌱</span>
+    {{ project.headings.heading3 }}
+  </h3>
+  <p>{{ project.paragraphs.paragraph3 }}</p>
+
+  <button class="mt-8 mx-auto bg-gray-500 text-white font-bold py-2 px-4 rounded" (click)="projects.changeOpened()">
     Close
   </button>
 </ng-container>

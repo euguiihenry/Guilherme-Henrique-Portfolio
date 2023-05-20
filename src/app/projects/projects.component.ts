@@ -13,32 +13,21 @@ import { ProjectCardComponent } from '../project-card/project-card.component';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent {
-  /*public info: ProjectInfo[] = [];
-  public image: ProjectImages[] = [];*/
   public knows: string = "";
   public projects: any = [];
   private opened = false;
 
   constructor(private getProject: GetProjectsService, private languageService: ArrangeLanguageService, private currentRoute: GetCurrentRouteService) { }
 
-  openCard(title: string) {
-    console.log('Opening card: ' + title);
-    this.openedCard();
-  }
+  private getKnows(): void {
+    try {
+      const langueStr = localStorage.getItem('langueObj');
 
-  defineLangue() {
-    const langueStr = localStorage.getItem('langueObj');
+      if(langueStr)
+        this.knows = JSON.parse(langueStr).project.knows;
 
-    if (langueStr) {
-      try {
-        const langueObj = JSON.parse(langueStr);
-
-        this.knows = langueObj.project.knows;
-        console.log(this.knows);
-
-      } catch (e) {
-        console.error('Failed to parse localStorage item: ', e);
-      }
+    } catch (e) {
+      console.error('Failed to parse localStorage item: ', e);
     }
   }
 
@@ -63,13 +52,24 @@ export class ProjectsComponent {
     }
   }
 
-  public openedCard(): boolean {
-    this.opened = !this.opened;
-    return this.opened
+  public changeOpened = () => this.opened = !this.opened;
+
+  public openCard(title: string) {
+    console.log('Opening card: ' + title);
+    this.changeOpened();
+
+    const cardProject = this.projects.find((project: any) => {
+      return project.title === title;
+    })
+
+    console.log(cardProject)
   }
 
+  public isCardOpen = (): boolean  => this.opened;
+
+
   ngOnInit(): void {
-    this.defineLangue();
+    this.getKnows();
     this.getProjectsInfo();
   }
 }

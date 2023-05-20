@@ -16,8 +16,12 @@ export class ArrangeLoadingService {
   }
 
   loadScreen = (): void => {
-    this.delay(2000)
-      .then(() => this.bool = false);
+    this.disableScroll();
+    this.delay(2800)
+      .then(() => {
+        this.bool = false;
+        this.enableScroll();
+      })
   }
 
   resetBool = (): void => {
@@ -26,5 +30,14 @@ export class ArrangeLoadingService {
   }
 
   returnBool = (): boolean => this.bool;
+
+  disableScroll = (): void => {
+    document.body.scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+  }
+
+  enableScroll = (): void => {
+    document.body.style.overflow = 'scroll';
+  }
 
 }
