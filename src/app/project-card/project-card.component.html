@@ -1,81 +1,79 @@
-<ng-container>
-  <img [src]="project.imageUrl" [style.width]="'90%'" alt="Image" />
-
-  <div class="text-left mt-4">
-    <h2 class="text-3xl font-bold">
-      {{ project.subtitle }}
-    </h2>
-    <h1 class="text-4xl font-bold">
-      {{ project.title }}
-    </h1>
-  </div>
-
-  <h3 class="flex items-center mt-6">
-    <span class="mr-2">👀</span>
-    {{ project.headings.heading1 }}
-  </h3>
-  <p>{{ project.paragraphs.paragraph1 }}</p>
-
-  <div class="grid grid-cols-4 gap-4 mt-8 info">
-    <div class="flex items-center">
-      <p>
-        <strong>📅</strong> {{ project.timeline }}
-      </p>
+<ng-container class="grid grid-cols-1 grid-rows-1">
+  <div class="sec0 flex flex-col gap-1 w-full bg-gray-700">
+    <div class="w-full">
+      <img src="{{project.coverImg}}" alt="cover-photo">
     </div>
-    <div class="flex items-center">
-      <p>
-        <strong>👥</strong> {{ project.myRole }}
-      </p>
-    </div>
-    <div class="flex items-center">
-      <p>
-        <strong>🚀</strong> {{ project.tech }}
-      </p>
-    </div>
-    <div class="flex items-center">
-      <p>
-        <strong>🔗</strong> {{ project.links }}
-      </p>
+    <div>
+      <span>{{project.subtitle}}</span>
+      <h2>{{project.title}}</h2>
     </div>
   </div>
 
-  <h3 class="flex items-center mt-6">
-    <span class="mr-2">🌱</span>
-    {{ project.headings.heading2 }}
-  </h3>
-  <p>{{ project.paragraphs.paragraph2 }}</p>
-
-  <div class="flex mt-8">
-    <div class="w-1/2">
-      <img [src]="project.imageUrls.imageUrl1" alt="Image 1" />
+  <ng-container class="sec1">
+    <div>
+      <p>{{pageTopics.glance}}</p>
+      <span>{{project.explaining.explain1}}</span>
     </div>
-    <div class="w-1/2">
-      <img [src]="project.imageUrls.imageUrl2" alt="Image 2" />
+
+    <div>
+      <div>
+        <p>{{pageTopics.timeline}}</p>
+        <span>{{project.resume.timeline}}</span>
+      </div>
+
+      <div>
+        <p>{{pageTopics.my_role}}</p>
+        <span>{{project.resume.myRole}}</span>
+      </div>
+
+      <div>
+        <p>{{pageTopics.tech}}</p>
+        <span>{{project.resume.tech}}</span>
+      </div>
+
+      <div>
+        <p>{{pageTopics.links}}</p>
+        <span>{{project.resume.links.github}}</span>
+        <br>
+        <span>{{project.resume.links.source2}}</span>
+      </div>
     </div>
-  </div>
+  </ng-container>
 
-  <h3 class="flex items-center mt-6">
-    <span class="mr-2">🌱</span>
-    {{ project.headings.heading3 }}
-  </h3>
-  <p>{{ project.paragraphs.paragraph3 }}</p>
-
-  <div class="flex mt-8">
-    <div class="w-1/2">
-      <img [src]="project.imageUrls.imageUrl1" alt="Image 1" />
+  <ng-container class="sec2">
+    <div>
+      <p>{{pageTopics.first_steps}}</p>
+      <span>{{project.explaining.explain2}}</span>
     </div>
-    <div class="w-1/2">
-      <img [src]="project.imageUrls.imageUrl2" alt="Image 2" />
+
+    <div>
+      <img src="{{project.imageUrls.combo1.img1}}" alt="">
+      <img src="{{project.imageUrls.combo1.img2}}" alt="">
     </div>
-  </div>
+  </ng-container>
 
-  <h3 class="flex items-center mt-6">
-    <span class="mr-2">🌱</span>
-    {{ project.headings.heading3 }}
-  </h3>
-  <p>{{ project.paragraphs.paragraph3 }}</p>
+  <ng-container class="sec3">
+    <div>
+      <p>{{pageTopics.details}}</p>
+      <span>{{project.explaining.explain3}}</span>
+    </div>
 
-  <button class="mt-8 mx-auto bg-gray-500 text-white font-bold py-2 px-4 rounded" (click)="projects.changeOpened()">
-    Close
-  </button>
+    <div>
+      <img src="{{project.imageUrls.combo2.img1}}" alt="">
+      <img src="{{project.imageUrls.combo2.img2}}" alt="">
+    </div>
+  </ng-container>
+
+  <ng-container class="sec4">
+    <div>
+      <p>{{pageTopics.learnt}}</p>
+      <span>{{project.explaining.explain4}}</span>
+    </div>
+  </ng-container>
+
+  <ng-container class="sec5">
+    <div>
+      <button (click)="cardService.closeCard()">{{pageTopics.closeBtn}}</button>
+    </div>
+  </ng-container>
 </ng-container>

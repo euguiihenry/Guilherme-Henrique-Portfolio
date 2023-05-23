@@ -1,5 +1,4 @@
-<div *ngIf="isCardOpen()" class="project-card-container">
-  <div class="bg-gray-500 opacity-75 w-full foreground-gray"></div>
+<div *ngIf="this.cardService.isCardOpen()" class="project-card-container">
   <div class="project-card-div">
     <app-project-card class="project-card-tag"></app-project-card>
   </div>
@@ -13,7 +12,7 @@
         <div class="py-2 flex justify-between">
           <h2 class="font-bold text-lg mb-0.5">{{ item.title }}</h2>
           <button class="text-white text-base bg-slate-500 p-1 rounded openCardBtn"
-            (click)="openCard(item.title)">{{knows}}</button>
+            (click)="this.cardService.openCard(item.id)">{{knows}}</button>
         </div>
         <h3 class="text-gray-700 text-xs mb-0.5">{{ item.subtitle }}</h3>
         <span class="text-gray-600 text-sm">{{ item.description }}</span>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ProjectsComponent } from '../projects/projects.component';
+import { ArrangeProjectCardService } from '../mutual/services/arrangeProjectCard/arrange-project-card.service';
+import { PageTopics, ProjectCard, pageTopicsDefaultModel, projectCardDefaultModel } from '../mutual/models/project-card';
 
 @Component({
   selector: 'app-project-card',
@@ -7,29 +8,34 @@ import { ProjectsComponent } from '../projects/projects.component';
   styleUrls: ['./project-card.component.scss']
 })
 export class ProjectCardComponent {
-  constructor(public projects: ProjectsComponent) { }
+  public project: ProjectCard;
+  public pageTopics: PageTopics;
 
-  project = {
-    imageUrl: 'path/to/image.jpg',
-    subtitle: 'Subtitle',
-    title: 'Title',
-    headings: {
-      heading1: 'Timeline',
-      heading2: 'Second Heading',
-      heading3: 'Third Heading'
-    },
-    paragraphs: {
-      paragraph1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      paragraph2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      paragraph3: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-    },
-    timeline: 'One month',
-    myRole: 'UI/UX Designer, Code Developer',
-    tech: 'Figma, HTML, SASS & JS',
-    links: 'https://github.com/example, https://example.com',
-    imageUrls: {
-      imageUrl1: 'path/to/image1.jpg',
-      imageUrl2: 'path/to/image2.jpg'
+  constructor(public cardService: ArrangeProjectCardService) {
+    this.project = projectCardDefaultModel();
+    this.pageTopics = pageTopicsDefaultModel();
+  }
+
+  private loadPageTopics() {
+    try {
+      const langueObj = JSON.parse(localStorage.getItem('langueObj') || '');
+      this.pageTopics = langueObj.project_cards
+      console.log(this.pageTopics);
+
+    } catch (error) {
+      console.log(error);
     }
   }
+
+  private loadProject() {
+
+  }
+
+  ngOnInit(): void {
+    console.log(this.project, this.pageTopics);
+    this.loadPageTopics();
+    this.loadProject();
+  }
+
+
 }

@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
 import { ArrangeLanguageService } from '../mutual/services/arrangeLanguage/arrange-language.service';
-import axios from "axios";
-import { environment } from 'src/environments/environment.development';
 import { GetCurrentRouteService } from '../mutual/services/getCurrentRoute/get-current-route.service';
 import { GetProjectsService } from '../mutual/services/getProjects/get-projects.service';
-import { Projects } from '../mutual/models/projects';
-import { ProjectCardComponent } from '../project-card/project-card.component';
+import { ArrangeProjectCardService } from '../mutual/services/arrangeProjectCard/arrange-project-card.service';
 
 @Component({
   selector: 'app-projects',
@@ -15,9 +12,8 @@ import { ProjectCardComponent } from '../project-card/project-card.component';
 export class ProjectsComponent {
   public knows: string = "";
   public projects: any = [];
-  private opened = false;
 
-  constructor(private getProject: GetProjectsService, private languageService: ArrangeLanguageService, private currentRoute: GetCurrentRouteService) { }
+  constructor(private getProject: GetProjectsService, private languageService: ArrangeLanguageService, private currentRoute: GetCurrentRouteService, readonly cardService: ArrangeProjectCardService) { }
 
   private getKnows(): void {
     try {
@@ -52,24 +48,9 @@ export class ProjectsComponent {
     }
   }
 
-  public changeOpened = () => this.opened = !this.opened;
-
-  public openCard(title: string) {
-    console.log('Opening card: ' + title);
-    this.changeOpened();
-
-    const cardProject = this.projects.find((project: any) => {
-      return project.title === title;
-    })
-
-    console.log(cardProject)
-  }
-
-  public isCardOpen = (): boolean  => this.opened;
-
-
   ngOnInit(): void {
     this.getKnows();
     this.getProjectsInfo();
+    this.cardService.getCardData();
   }
 }

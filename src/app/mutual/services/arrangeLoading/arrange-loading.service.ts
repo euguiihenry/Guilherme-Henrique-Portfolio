@@ -33,11 +33,11 @@ export class ArrangeLoadingService {
 
   disableScroll = (): void => {
     document.body.scrollTop = 0;
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflowY = 'hidden';
   }
 
   enableScroll = (): void => {
-    document.body.style.overflow = 'scroll';
+    document.body.style.overflowY = 'scroll';
   }
 
 }

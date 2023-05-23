@@ -20,6 +20,11 @@
       "src": "/api/post-message",
       "methods": ["POST"],
       "dest": "api/postMessage.js"
+    },
+    {
+      "src": "/api/get-card-projects",
+      "methods": ["GET"],
+      "dest": "api/getCardProject.js"
     }
   ]
 }
