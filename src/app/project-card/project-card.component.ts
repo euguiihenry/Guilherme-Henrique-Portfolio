@@ -20,7 +20,6 @@ export class ProjectCardComponent {
     try {
       const langueObj = JSON.parse(localStorage.getItem('langueObj') || '');
       this.pageTopics = langueObj.project_cards
-      console.log(this.pageTopics);
 
     } catch (error) {
       console.log(error);
@@ -28,11 +27,16 @@ export class ProjectCardComponent {
   }
 
   private loadProject() {
+    try {
 
+      console.log(this.cardService.getCardInfo());
+    }
+    catch (error) {
+
+    }
   }
 
   ngOnInit(): void {
-    console.log(this.project, this.pageTopics);
     this.loadPageTopics();
     this.loadProject();
   }

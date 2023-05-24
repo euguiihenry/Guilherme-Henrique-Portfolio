@@ -51,6 +51,6 @@ export class ProjectsComponent {
   ngOnInit(): void {
     this.getKnows();
     this.getProjectsInfo();
-    this.cardService.getCardData();
+    /* this.cardService.getCardData(); */
   }
 }
