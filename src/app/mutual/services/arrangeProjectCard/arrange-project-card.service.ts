@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
 import { GetCurrentRouteService } from '../getCurrentRoute/get-current-route.service';
+import { ProjectCard, cardObject, projectCardDefaultModel } from '../../models/project-card';
 import axios from 'axios';
-import { ProjectCard } from '../../models/project-card';
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class ArrangeProjectCardService {
   private opened = false;
 
@@ -21,7 +23,7 @@ export class ArrangeProjectCardService {
       const data = await axios.get(url);
       const info = data.data;
 
-      sessionStorage.setItem('cardsProjects', JSON.stringify(info));
+      sessionStorage.setItem('allCardsProject', JSON.stringify(info));
 
     } catch (error) {
       console.log(error);
@@ -30,21 +32,23 @@ export class ArrangeProjectCardService {
 
   private storeCardInfo(id: number): void {
 
-    const data = JSON.parse(sessionStorage.getItem('cardsProjects') || '');
-    const info: any = Object.values(data).at(0);
+    const data = JSON.parse(sessionStorage.getItem('allCardsProject') || '');
     const langue = localStorage.getItem('langue') || '';
-    const langueObj = Object.values(info[langue]);
-    console.log(info, langueObj);
-  }
 
-  public async getCardInfo(): Promise<ProjectCard | any> {
-    try {
-      const data = JSON.parse(sessionStorage.getItem('cardProjects') || '');
-      return data;
+    const cardsText: any = Object.values(data).at(0);
+    const cardsPic: any = Object.values(data).at(1);
 
-    } catch (error) {
-      console.log(error);
+    const cardsObjects: cardObject = {
+        info: Object.values(cardsText[langue]),
+        pics: Object.values(cardsPic)
     }
+
+    const cardObj: ProjectCard = {
+      ...cardsObjects.info[id],
+      ...cardsObjects.pics[id]
+    }
+
+    sessionStorage.setItem('cardProject', JSON.stringify(cardObj));
   }
 
   public changeOpened = (): boolean => this.opened = !this.opened;

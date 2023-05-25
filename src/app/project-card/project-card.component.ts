@@ -26,13 +26,20 @@ export class ProjectCardComponent {
     }
   }
 
-  private loadProject() {
+  private loadProject(): void {
     try {
+      const cardInfo: any = JSON.parse(sessionStorage.getItem('cardProject') || '');
 
-      console.log(this.cardService.getCardInfo());
+      if (cardInfo && cardInfo != '') {
+        this.project = cardInfo;
+      } else {
+        this.project = projectCardDefaultModel();
+      }
+
+      console.log(this.project)
     }
     catch (error) {
-
+      console.log(error);
     }
   }
 

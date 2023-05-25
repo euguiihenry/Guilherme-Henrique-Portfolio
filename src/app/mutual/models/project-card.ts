@@ -42,6 +42,11 @@ export interface PageTopics {
   closeBtn: string
 }
 
+export interface cardObject {
+  info: Array<ProjectCard>,
+  pics: Array<ProjectCard>,
+}
+
 export function projectCardDefaultModel() {
   const project: ProjectCard = {
     id: 0,
