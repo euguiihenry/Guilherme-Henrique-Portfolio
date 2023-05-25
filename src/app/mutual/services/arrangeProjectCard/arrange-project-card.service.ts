@@ -31,7 +31,10 @@ export class ArrangeProjectCardService {
   private storeCardInfo(id: number): void {
 
     const data = JSON.parse(sessionStorage.getItem('cardsProjects') || '');
-    console.log(data);
+    const info: any = Object.values(data).at(0);
+    const langue = localStorage.getItem('langue') || '';
+    const langueObj = Object.values(info[langue]);
+    console.log(info, langueObj);
   }
 
   public async getCardInfo(): Promise<ProjectCard | any> {

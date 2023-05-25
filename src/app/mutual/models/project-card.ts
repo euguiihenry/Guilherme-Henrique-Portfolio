@@ -1,4 +1,5 @@
 export interface ProjectCard {
+  id: number,
   coverImg: string,
   subtitle: string,
   title: string,
@@ -43,6 +44,7 @@ export interface PageTopics {
 
 export function projectCardDefaultModel() {
   const project: ProjectCard = {
+    id: 0,
     coverImg: 'path/to/image.jpg',
     subtitle: 'Subtitle',
     title: 'Title',
