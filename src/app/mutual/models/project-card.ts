@@ -6,8 +6,8 @@ export interface ProjectCard {
   resume: {
     timeline: string,
     myRole: string,
-    tech: string,
-    links: {
+    tech: Array<string>,
+    links_text: {
       github: string,
       source2: string,
     }
@@ -56,8 +56,8 @@ export function projectCardDefaultModel() {
     resume: {
       timeline: 'Timeline',
       myRole: 'My role on this project',
-      tech: 'Technologies on this project',
-      links: {
+      tech: ['Technologies on this project'],
+      links_text: {
         github: 'https://github.com/example',
         source2: 'https://example.com'
       }
