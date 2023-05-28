@@ -1,22 +1,10 @@
-@media (min-width: 640px) {
-    .w-one-half {
-        width: 50%;
-    }
-}
-
-@media (min-width: 768px) {
-    .w-one-quarter {
-        width: 25%;
-    }
-}
-
 .mb-4 {
     margin-bottom: 1rem;
 }
 
 .openCardBtn{
-    background-color: #4B5E75;
-    color: #E3E6FA;
+    background-color: var(--cta2-light);
+    color: var(--text-light);
     font-size: smaller;
     border-radius: 0.6rem;
     padding: 0 0.6rem;
@@ -33,12 +21,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(2px); /* Add backdrop-filter for blur effect */
+  backdrop-filter: brightness(0.2) grayscale(0.5) opacity(0.8);
+
+  *::-webkit-scrollbar-track {
+    background-color: var(--cta3-light);
+    border-radius: 0.5em;
+  }
 
   .project-card-div {
     position: absolute;
-    background-color: aquamarine;
-    width: 90%;
+    background-color: var(--bg-light);
     min-height: 90%;
     bottom: 10%;
     top: 2em;
@@ -55,8 +47,4 @@
       padding: 1.5em;
     }
   }
-}
-
-body.modal-open {
-  overflow: hidden; /* Prevent body scrolling when modal is open */
 }
