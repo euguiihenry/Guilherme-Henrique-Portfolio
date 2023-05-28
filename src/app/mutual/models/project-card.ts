@@ -62,12 +62,12 @@ export function projectCardDefaultModel() {
       myRole: 'My role on this project',
       tech: ['Technologies on this project'],
       links_text: {
-        source1: 'https://github.com/example',
-        source2: 'https://example.com'
+        source1: 'GitHub',
+        source2: 'Vercel'
       },
       links_url: {
-        source1: 'https://github.com/example',
-        source2: 'https://example.com'
+        source1: 'https://github.com/euguiihenry',
+        source2: 'https://vercel.com'
       }
     },
     explaining: {

@@ -37,7 +37,7 @@ export class ContactComponent {
         this.objectStr.nameMsg = langueObj.contact.nameMsg;
         this.objectStr.emailMsg = langueObj.contact.emailMsg;
         this.objectStr.subjectMsg = langueObj.contact.subjectMsg;
-        this.objectStr.messageTxt = langueObj.contact.messageMsg;
+        this.objectStr.messageTxt = langueObj.contact.messageTxt;
 
       } catch (e) {
         console.error('Failed to parse localStorage item: ', e);
