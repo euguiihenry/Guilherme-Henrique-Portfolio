@@ -23,9 +23,22 @@
   align-items: center;
   backdrop-filter: brightness(0.2) grayscale(0.5) opacity(0.8);
 
+  *::-webkit-scrollbar {
+    width: 1em;
+    overflow-y: auto;
+
+  }
+
   *::-webkit-scrollbar-track {
+    background-color: var(--bg-light);
+    margin-block: 0.9em;
+    border-radius: 0.8em;
+  }
+
+  *::-webkit-scrollbar-thumb {
     background-color: var(--cta3-light);
     border-radius: 0.5em;
+    border: 0.3em solid var(--bg-light);
   }
 
   .project-card-div {
