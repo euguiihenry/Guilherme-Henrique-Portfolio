@@ -36,6 +36,10 @@ const routes: Routes = [
   {
     path: 'error-page',
     component: ErrorPageComponent
+  },
+  {
+    path: 'card',
+    component: ProjectCardComponent
   }
 ];
 

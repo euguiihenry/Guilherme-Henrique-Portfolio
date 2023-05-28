@@ -24,7 +24,7 @@
   backdrop-filter: brightness(0.2) grayscale(0.5) opacity(0.8);
 
   *::-webkit-scrollbar {
-    width: 1em;
+    width: 0.8em;
     overflow-y: auto;
 
   }
@@ -38,7 +38,7 @@
   *::-webkit-scrollbar-thumb {
     background-color: var(--cta3-light);
     border-radius: 0.5em;
-    border: 0.3em solid var(--bg-light);
+    border: 0.25em solid var(--bg-light);
   }
 
   .project-card-div {

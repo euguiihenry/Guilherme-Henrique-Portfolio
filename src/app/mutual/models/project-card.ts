@@ -8,8 +8,12 @@ export interface ProjectCard {
     myRole: string,
     tech: Array<string>,
     links_text: {
-      github: string,
+      source1: string,
       source2: string,
+    },
+    links_url: {
+      source1: string,
+      source2: string
     }
   },
   explaining: {
@@ -58,7 +62,11 @@ export function projectCardDefaultModel() {
       myRole: 'My role on this project',
       tech: ['Technologies on this project'],
       links_text: {
-        github: 'https://github.com/example',
+        source1: 'https://github.com/example',
+        source2: 'https://example.com'
+      },
+      links_url: {
+        source1: 'https://github.com/example',
         source2: 'https://example.com'
       }
     },
