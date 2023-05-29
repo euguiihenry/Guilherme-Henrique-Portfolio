@@ -13,32 +13,29 @@ app.use(cors(
   }
 ));
 
-/* app.get('/api/langue-objects', async (req, res, next) => {
-  try{
-      const url = process.env.LANGUE_OBJECTS_URL;
-      const data = await axios.get(url);
-      const info = data.data;
-      res.send(info);
-
-  } catch (error) {
-      next(error);
-  }
-}); */
-
 app.post('/api/post-message', async (req, res, next) => {
   try{
       const url = process.env.POST_MESSAGE_URL;
-      const data = await axios.post(url, req.body);
-      res.send(data.data);
+      const message = req.body
+      console.log(message);
+      await axios.post('https://reqres.in/api/register', {
+        message
+      })
+
+      res.send(data);
 
   } catch (error) {
-    next(error);
+    next(error, message);
   }
 });
 
 app.use((error, req, res, next) => {
-  console.error(error.stack);
-  res.status(500).send('Error retrieving data! Something went wrong!');
+  try {
+    res.status(error.response.status).send(error.response.statusText + "\n" + req.body);
+  } catch (error) {
+
+    res.status(500).send("Error while sending and error to try to get error message\n" + req.body + "\n" + error.stack );
+  }
 });
 
 module.exports = app;
