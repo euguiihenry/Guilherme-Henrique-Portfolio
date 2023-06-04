@@ -16,16 +16,19 @@ app.use(cors(
 app.post('/api/post-message', async (req, res, next) => {
   try{
       const url = process.env.POST_MESSAGE_URL;
-      const message = req.body
-      console.log(message);
-      await axios.post('https://reqres.in/api/register', {
-        message
-      })
+      const response = await axios.post(url, JSON.stringify(req.body), {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      });
 
-      res.send(data);
+      console.log(response);
+
+      res.send("Email sent successfully. 🚀😁");
 
   } catch (error) {
-    next(error, message);
+    next(error);
   }
 });
 

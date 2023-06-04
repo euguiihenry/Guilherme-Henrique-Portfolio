@@ -2,30 +2,30 @@
     <h2 class="text-5xl font-bold mb-2">{{objectStr.pageTitle}}</h2>
     <p class="mb-8 text-sm">{{objectStr.pageSubtitle}}</p>
 
-    <form class="flex flex-col w-80 lg:w-2/4 form-contact">
-        <label class="mb-2 font-bold text-gray-600 ml-2 text-sm" for="name">{{objectStr.name}}</label>
-        <input
-            class="mb-3 shadow appearance-none rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-solid border-black h-12 border-2"
-            id="name" type="text" [placeholder]="objectStr.nameMsg" required>
+    <form class="flex flex-col w-80 lg:w-2/4 form-contact" #formRef="ngForm" (ngSubmit)="postMessage(formRef)">
+      <label class="mb-2 font-bold text-gray-600 ml-2 text-sm" for="name">{{objectStr.name}}</label>
+      <input
+          class="mb-3 shadow appearance-none rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-solid border-black h-12 border-2"
+          id="name" name="name" type="text" [placeholder]="objectStr.nameMsg" required [(ngModel)]="requestBody.name">
 
-        <label class="mb-2 font-bold text-gray-600 ml-2 text-sm" for="email">{{objectStr.email}}</label>
-        <input
-            class="mb-3 shadow appearance-none rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-solid border-black h-12 border-2"
-            id="email" type="email" [placeholder]="objectStr.emailMsg" required>
+      <label class="mb-2 font-bold text-gray-600 ml-2 text-sm" for="email">{{objectStr.email}}</label>
+      <input
+          class="mb-3 shadow appearance-none rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-solid border-black h-12 border-2"
+          id="email" name="email" type="email" [placeholder]="objectStr.emailMsg" required [(ngModel)]="requestBody.email">
 
-        <label class="mb-2 font-bold text-gray-600 ml-2 text-sm" for="topic">{{objectStr.subject}}</label>
-        <input
-            class="mb-3 shadow appearance-none rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-solid border-black h-12 border-2"
-            id="topic" type="text" [placeholder]="objectStr.subjectMsg" required>
+      <label class="mb-2 font-bold text-gray-600 ml-2 text-sm" for="subject">{{objectStr.subject}}</label>
+      <input
+          class="mb-3 shadow appearance-none rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-solid border-black h-12 border-2"
+          id="subject" name="subject" type="text" [placeholder]="objectStr.subjectMsg" required [(ngModel)]="requestBody.subject">
 
-        <label class="mb-2 font-bold text-gray-600 ml-2 text-sm" for="message">{{objectStr.message}}</label>
-        <textarea class="mb-6 shadow appearance-none rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none border-solid border-black border-2" id="message" [placeholder]="objectStr.messageTxt" required></textarea>
+      <label class="mb-2 font-bold text-gray-600 ml-2 text-sm" for="message">{{objectStr.message}}</label>
+      <textarea class="mb-6 shadow appearance-none rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none border-solid border-black border-2" id="message" name="message" [placeholder]="objectStr.messageTxt" required [(ngModel)]="requestBody.message"></textarea>
 
-        <div class="flex justify-center">
-            <button class="bg-gray-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-80" type="submit">
-                {{objectStr.sendBtn}}
-            </button>
-        </div>
+      <div class="flex justify-center">
+          <button class="bg-gray-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-80" type="submit">
+              {{objectStr.sendBtn}}
+          </button>
+      </div>
+  </form>
 
-    </form>
 </div>

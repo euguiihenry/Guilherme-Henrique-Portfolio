@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { ContactPageInfo, contactPageInfoDefaultModel, RequestBody, requestBodyDefaultModel } from '../mutual/models/contact';
+import { NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment.development';
+import { GetCurrentRouteService } from '../mutual/services/getCurrentRoute/get-current-route.service';
 
 @Component({
   selector: 'app-contact',
@@ -6,21 +11,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent {
-  public objectStr = {
-    pageTitle: '',
-    pageSubtitle: '',
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-    sendBtn: '',
-    nameMsg: '',
-    emailMsg: '',
-    subjectMsg: '',
-    messageTxt: ''
+  public objectStr: ContactPageInfo;
+  public requestBody: RequestBody;
+
+  constructor (private http: HttpClient, private currentRoute: GetCurrentRouteService) {
+    this.objectStr = contactPageInfoDefaultModel();
+    this.requestBody = requestBodyDefaultModel();
   }
 
-  defineLangue() {
+  private defineLangue(): void  {
     const langueStr = localStorage.getItem('langueObj');
 
     if (langueStr) {
@@ -43,6 +42,22 @@ export class ContactComponent {
         console.error('Failed to parse localStorage item: ', e);
       }
     }
+  }
+
+  public postMessage(formRef: NgForm): void {
+    const url = environment.HTTP_LINK + this.currentRoute.getUrl() + environment.POST_MESSAGE_LINK;
+
+    this.http.post(url, this.requestBody).subscribe((data) => {
+      console.log("Message sent\n" + data);
+    },
+    (err) => {
+      console.error(err);
+    })
+
+    console.log(this.requestBody);
+    formRef.resetForm();
+    this.requestBody = requestBodyDefaultModel();
+
   }
 
   ngOnInit(): void {
