@@ -4,6 +4,8 @@ import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.development';
 import { GetCurrentRouteService } from '../mutual/services/getCurrentRoute/get-current-route.service';
+import { SendMessageService } from '../mutual/services/sendMessage/send-message.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-contact',
@@ -14,7 +16,7 @@ export class ContactComponent {
   public objectStr: ContactPageInfo;
   public requestBody: RequestBody;
 
-  constructor (private http: HttpClient, private currentRoute: GetCurrentRouteService) {
+  constructor (private sendMessage: SendMessageService) {
     this.objectStr = contactPageInfoDefaultModel();
     this.requestBody = requestBodyDefaultModel();
   }
@@ -45,19 +47,17 @@ export class ContactComponent {
   }
 
   public postMessage(formRef: NgForm): void {
-    const url = environment.HTTP_LINK + this.currentRoute.getUrl() + environment.POST_MESSAGE_LINK;
+    this.sendMessage.send(this.requestBody).subscribe((response: Object) => this.showResponse(response));
+    this.resetForm(formRef);
+  }
 
-    this.http.post(url, this.requestBody).subscribe((data) => {
-      console.log("Message sent\n" + data);
-    },
-    (err) => {
-      console.error(err);
-    })
+  private showResponse(response: Object): void {
+    console.log(response);
+  }
 
-    console.log(this.requestBody);
+  private resetForm(formRef: NgForm): void {
     formRef.resetForm();
     this.requestBody = requestBodyDefaultModel();
-
   }
 
   ngOnInit(): void {
